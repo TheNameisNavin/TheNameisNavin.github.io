@@ -51,21 +51,30 @@
 
     <nav>
         <a href="about.html" class="hover-sound">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
+        <a href="projects.html" class="hover-sound">Projects</a>
+        <a href="blog.html" class="hover-sound">Blog</a>
+        <a href="testimonials.html" class="hover-sound">Testimonials</a>
+        <a href="contact.html" class="hover-sound">Contact</a>
     </nav>
     <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script src="script.js"></script>
+    <script>
+        // JavaScript code to play sound on hover
+        document.querySelectorAll('.hover-sound').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                const sound = document.getElementById('hover-sound');
+                sound.play();
+            });
+        });
+    </script>
     <div class="container">
         <h1>🎉 Welcome to My Site! 🌟</h1>
         <p>Dive into a world where creativity meets professionalism. Here, you'll find a blend of my projects,
         insights, and experiences.<br> Explore and connect—let's make something amazing together!<br></p>
             
         <h2>🔍 Explore the Navigation Bar 🗺️</h2>
-        <p>Pick a section to dive deeper into my work and get to know me better. From projects to insights,everything is just a click away!</p>
+        <p>Pick a section to dive deeper into my work and get to know me better. From projects to insights, everything is just a click away!</p>
     </div>
 
 </body>
 </html>
+
