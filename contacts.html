@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Navin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        nav {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            border-bottom: 3px solid #4caf50;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #4caf50;
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #4caf50;
+            border: none;
+            color: #ffffff;
+        }
+        input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+    </nav>
+
+    <div class="container">
+        <h2>Contact Me</h2>
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+</body>
+</html>
