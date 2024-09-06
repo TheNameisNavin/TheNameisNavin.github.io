@@ -55,14 +55,23 @@
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="blog.html">Blog</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
+  <nav>
+        <a href="about.html" class="hover-sound">About Me</a>
+        <a href="projects.html" class="hover-sound">Projects</a>
+        <a href="blog.html" class="hover-sound">Blog</a>
+        <a href="testimonials.html" class="hover-sound">Testimonials</a>
+        <a href="contact.html" class="hover-sound">Contact</a>
     </nav>
-
+    <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
+    <script>
+        // JavaScript code to play sound on hover
+        document.querySelectorAll('.hover-sound').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                const sound = document.getElementById('hover-sound');
+                sound.play();
+            });
+        });
+    </script>
     <div class="container">
         <h2>Projects</h2>
         <div class="project-item">
