@@ -1,50 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navin's Professional Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: #ffffff;
         }
         header {
             text-align: center;
-            padding: 2rem 0;
-            background-color: #1f1f1f;
+            padding: 4rem 0;
+            background: linear-gradient(45deg, #1f1f1f, #292929);
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            color: #4caf50;
         }
         header p {
-            font-size: 1.2rem;
-            color: #bbbbbb;
+            font-size: 1.5rem;
+            color: #aaaaaa;
         }
         section {
-            padding: 2rem;
+            padding: 3rem;
             margin: 2rem auto;
             max-width: 800px;
             background-color: #1e1e1e;
-            border-radius: 8px;
+            border-radius: 10px;
         }
         h2 {
-            border-bottom: 2px solid #4caf50;
+            border-bottom: 3px solid #4caf50;
             padding-bottom: 0.5rem;
+            font-weight: 600;
         }
         .projects, .blog, .testimonials {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         .project-item, .blog-post, .testimonial-item {
-            padding: 1rem;
+            padding: 1.5rem;
             background-color: #2a2a2a;
-            border-radius: 8px;
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .project-item:hover, .blog-post:hover, .testimonial-item:hover {
+            background-color: #333333;
+            transform: translateY(-5px);
         }
         .contact-form label {
             display: block;
@@ -53,33 +60,48 @@
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.7rem;
             margin-top: 0.5rem;
-            border-radius: 4px;
+            border-radius: 5px;
             border: 1px solid #4caf50;
             background-color: #333333;
             color: #ffffff;
+            font-size: 1rem;
         }
         .contact-form button {
-            margin-top: 1rem;
-            padding: 0.7rem 1.5rem;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
             background-color: #4caf50;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             color: #ffffff;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         .contact-form button:hover {
             background-color: #45a049;
+        }
+        .hero {
+            background: url('your-hero-image.jpg') center/cover no-repeat;
+            padding: 5rem;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Navin's Professional Webpage</h1>
-        <p>Welcome to my professional space!</p>
+        <p>Welcome to my vibrant professional space!</p>
     </header>
+
+    <div class="hero">
+        <h2>Bringing Innovation to Life</h2>
+        <p>Your tagline or a brief introduction here.</p>
+    </div>
 
     <section id="about">
         <h2>About Me</h2>
@@ -87,66 +109,3 @@
             Hi, I'm Navin! I'm passionate about [Your Field/Industry]. With a strong background in [Your Skills/Experience], I specialize in [Your Specializations].
         </p>
     </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project-item">
-                <h3>Project Title 1</h3>
-                <p>Description of your project. Include any relevant details or links.</p>
-            </div>
-            <div class="project-item">
-                <h3>Project Title 2</h3>
-                <p>Description of your project. Include any relevant details or links.</p>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <div class="blog">
-            <div class="blog-post">
-                <h3>Blog Post Title 1</h3>
-                <p>Summary or introduction to the blog post. Add more content as needed.</p>
-            </div>
-            <div class="blog-post">
-                <h3>Blog Post Title 2</h3>
-                <p>Summary or introduction to the blog post. Add more content as needed.</p>
-            </div>
-            <!-- Add more blog posts as needed -->
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonials">
-            <div class="testimonial-item">
-                <p>"Navin is a highly skilled professional who consistently delivers high-quality work."</p>
-                <p>- Testimonial Author 1</p>
-            </div>
-            <div class="testimonial-item">
-                <p>"Working with Navin has been a fantastic experience. Highly recommended!"</p>
-                <p>- Testimonial Author 2</p>
-            </div>
-            <!-- Add more testimonials as needed -->
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form class="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-</body>
-</html>
