@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navin's Professional Webpage</title>
+    <title>Navin's Professional Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -12,100 +12,50 @@
             background-color: #121212;
             color: #ffffff;
         }
-        header {
+        nav {
+            background-color: #1f1f1f;
+            padding: 1rem;
             text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(45deg, #1f1f1f, #292929);
         }
-        header h1 {
-            margin: 0;
+        nav a {
+            margin: 0 1rem;
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
             font-size: 3rem;
             color: #4caf50;
         }
-        header p {
-            font-size: 1.5rem;
-            color: #aaaaaa;
-        }
-        section {
-            padding: 3rem;
-            margin: 2rem auto;
-            max-width: 800px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-        }
-        h2 {
-            border-bottom: 3px solid #4caf50;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        .projects, .blog, .testimonials {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .project-item, .blog-post, .testimonial-item {
-            padding: 1.5rem;
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .project-item:hover, .blog-post:hover, .testimonial-item:hover {
-            background-color: #333333;
-            transform: translateY(-5px);
-        }
-        .contact-form label {
-            display: block;
-            margin-top: 1rem;
-            color: #bbbbbb;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.7rem;
-            margin-top: 0.5rem;
-            border-radius: 5px;
-            border: 1px solid #4caf50;
-            background-color: #333333;
-            color: #ffffff;
-            font-size: 1rem;
-        }
-        .contact-form button {
-            margin-top: 1.5rem;
-            padding: 0.8rem 2rem;
-            background-color: #4caf50;
-            border: none;
-            border-radius: 5px;
-            color: #ffffff;
+        p {
             font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .contact-form button:hover {
-            background-color: #45a049;
-        }
-        .hero {
-            background: url('your-hero-image.jpg') center/cover no-repeat;
-            padding: 5rem;
-            text-align: center;
-            color: #ffffff;
-            border-radius: 10px;
-            margin-bottom: 2rem;
+            color: #aaaaaa;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Navin's Professional Webpage</h1>
-        <p>Welcome to my vibrant professional space!</p>
-    </header>
 
-    <div class="hero">
-        <h2>Bringing Innovation to Life</h2>
-        <p>Your tagline or a brief introduction here.</p>
+    <nav>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome to My Professional Website</h1>
+        <p>Select a section from the navigation bar to learn more about me and my work.</p>
     </div>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hi, I'm Navin! I'm passionate about [Your Field/Industry]. With a strong background in [Your Skills/Experience], I specialize in [Your Specializations].
-        </p>
-    </section>
+</body>
+</html>
