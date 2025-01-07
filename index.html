@@ -11,6 +11,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: #ffffff;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         
         .gif-container {
@@ -58,9 +59,9 @@
             height: 20px;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 50%;
-            animation: float 2s ease-in-out infinite;
+            animation: float 2s ease-in-out forwards;
             pointer-events: none;
-            opacity: 0;
+            z-index: 10; /* Ensure it is above other elements */
         }
 
         /* Bubble animation */
@@ -112,9 +113,9 @@
             bubble.className = 'bubble';
             document.body.appendChild(bubble);
 
-            // Set the bubble's position
-            bubble.style.left = `${5}px`;
-            bubble.style.top = `${10}px`;
+            // Set the bubble's position relative to the viewport
+            bubble.style.left = `${x}px`;
+            bubble.style.top = `${y - 20}px`; // Offset to center above click
 
             // Remove bubble after animation
             bubble.addEventListener('animationend', () => {
@@ -132,4 +133,3 @@
     </div>
 </body>
 </html>
-
