@@ -11,32 +11,48 @@
             font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: #ffffff;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow: hidden; /* Ensure no scrolling caused by particles */
         }
-        
+
+        /* Particles.js container */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensure particles appear behind the content */
+        }
+
         .gif-container {
             margin: 20px auto;
             width: 400px;
         }
+
         nav {
             background-color: #1f1f1f;
             padding: 1rem;
             text-align: center;
         }
+
         nav a {
             margin: 0 1rem;
             color: #F56040;
             text-decoration: none;
             font-size: 1.2rem;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
+
         .container {
             padding: 2rem;
             max-width: 800px;
             margin: auto;
+            position: relative;
         }
+
         h1 {
             text-align: center;
             font-size: 2.6rem;
@@ -52,30 +68,6 @@
             color: #FFD700;
         }
 
-        /* Bubble container */
-        .bubble {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            animation: float 2s ease-in-out forwards;
-            pointer-events: none;
-            z-index: 10; /* Ensure it is above other elements */
-        }
-
-        /* Bubble animation */
-        @keyframes float {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) scale(0.5);
-                opacity: 0;
-            }
-        }
-    
         p {
             font-size: 1.2rem;
             color: #aaaaaa;
@@ -83,6 +75,9 @@
     </style>
 </head>
 <body>
+
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
 
     <nav>
         <a href="about.html" class="hover-sound">About Me</a>
@@ -100,28 +95,6 @@
                 sound.play();
             });
         });
-
-        // JavaScript code for the bubble effect
-        const heading = document.querySelector('h1');
-
-        heading.addEventListener('click', (event) => {
-            createBubble(event.clientX, event.clientY);
-        });
-
-        function createBubble(x, y) {
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            document.body.appendChild(bubble);
-
-            // Set the bubble's position relative to the viewport
-            bubble.style.left = `${x}px`;
-            bubble.style.top = `${y - 20}px`; // Offset to center above click
-
-            // Remove bubble after animation
-            bubble.addEventListener('animationend', () => {
-                bubble.remove();
-            });
-        }
     </script>
     <div class="container">
         <h1>Welcome to My Website!!</h1>
@@ -131,5 +104,116 @@
     <div class="gif-container">
         <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHh0Z2Rma2o0bWN5ZG5zNGliejk0eHR3ejc0cThieW90Z3k5cHY5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12B39IawiNS7QI/giphy.gif" alt="Funny GIF" width="400">
     </div>
+
+    <!-- Particles.js script -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        /* Load particles.js with custom configuration */
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
+
