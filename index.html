@@ -40,6 +40,39 @@
             text-align: center;
             font-size: 2.6rem;
             color: #FFDC80;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Floating effect on hover */
+        h1:hover {
+            transform: translateY(-10px);
+            color: #FFD700;
+        }
+
+        /* Bubble container */
+        .bubble {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float 2s ease-in-out infinite;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        /* Bubble animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0.5);
+                opacity: 0;
+            }
         }
     
         p {
@@ -66,6 +99,28 @@
                 sound.play();
             });
         });
+
+        // JavaScript code for the bubble effect
+        const heading = document.querySelector('h1');
+
+        heading.addEventListener('click', (event) => {
+            createBubble(event.clientX, event.clientY);
+        });
+
+        function createBubble(x, y) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            document.body.appendChild(bubble);
+
+            // Set the bubble's position
+            bubble.style.left = `${x}px`;
+            bubble.style.top = `${y}px`;
+
+            // Remove bubble after animation
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+            });
+        }
     </script>
     <div class="container">
         <h1>Welcome to My Website!!</h1>
