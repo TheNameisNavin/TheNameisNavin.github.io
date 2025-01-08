@@ -8,28 +8,36 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
             background-color: #121212;
             color: #ffffff;
+            overflow: hidden;
         }
         nav {
             background-color: #1f1f1f;
             padding: 1rem;
             text-align: center;
         }
-        nav a {
+         nav a {
             margin: 0 1rem;
-            color: #4caf50;
+            color: #0F52BA;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
         nav a:hover {
-            text-decoration: underline;
+            transform: scale(1.1);
+            background-color: #1E90FF;
+            color: #ffffff;
         }
         .container {
             padding: 2rem;
             max-width: 800px;
             margin: auto;
+            position: relative;
         }
         h2 {
             border-bottom: 3px solid #4caf50;
