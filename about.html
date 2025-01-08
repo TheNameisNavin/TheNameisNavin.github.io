@@ -11,14 +11,14 @@
             font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
             background-color: #121212;
             color: #ffffff;
-            overflow: hidden;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         nav {
             background-color: #1f1f1f;
             padding: 1rem;
             text-align: center;
         }
-         nav a {
+        nav a {
             margin: 0 1rem;
             color: #0F52BA;
             text-decoration: none;
@@ -47,12 +47,23 @@
             position: relative;
             transition: transform 0.3s ease, color 0.3s ease;
         }
-       
+        h2:hover {
+            transform: translateY(-10px);
+            color: #5BB3E0;
+        }
         p {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #D6E8F7;
-            text-align: left;
-            
+            text-align: left; /* Ensure text aligns from left to right */
+            line-height: 1.8;
+            margin-bottom: 1.5rem; /* Add spacing between paragraphs */
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px; /* Optional: rounded corners for the image */
         }
     </style>
 </head>
@@ -68,15 +79,20 @@
 
     <div class="container">
         <h2>About Me</h2>
-        <p>I'm a tech problem solver, API whisperer, photographer and lifelong learner based in Chennai. With 4+ years of experience in SaaS, 
-            automation, and troubleshooting, I turn challenges into solutions and complexity into clarity.</p>
-
-<p>When I’m not coding or diving into networks, I’m exploring new tools, creating art, making arduino robots, sharing insights, and fueling my curiosity with endless tea ☕. 
-    And Btw, no one has ever seen me and batman in the same room. Just saying.</p>
-<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmFsMDlvZHlkZWtxZWdwZjJpNG5oZmJ0MWJ0NTAxdDg2Mm4xbGR0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nZUcWtrNqs9Nu/giphy.gif" 
-            alt="Bat GIF" style="width: 100%; max-width: 500px; display: block; margin: 30px auto;">    
-        
+        <p>
+            I'm a tech problem solver, API whisperer, photographer, and lifelong learner based in Chennai. 
+            With 4+ years of experience in SaaS, automation, and troubleshooting, I turn challenges into solutions 
+            and complexity into clarity.
+        </p>
+        <p>
+            When I’m not coding or diving into networks, I’m exploring new tools, creating art, making Arduino robots, 
+            sharing insights, and fueling my curiosity with endless tea ☕.  
+            And by the way, no one has ever seen me and Batman in the same room. Just saying.  
+        </p>
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmFsMDlvZHlkZWtxZWdwZjJpNG5oZmJ0MWJ0NTAxdDg2Mm4xbGR0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nZUcWtrNqs9Nu/giphy.gif" 
+             alt="Bat GIF">    
     </div>
 
 </body>
 </html>
+
