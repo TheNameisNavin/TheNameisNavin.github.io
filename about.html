@@ -76,7 +76,16 @@
         <a href="testimonials.html">Testimonials</a>
         <a href="contact.html">Contact</a>
     </nav>
-
+    <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
+    <script>
+        // JavaScript code to play sound on hover
+        document.querySelectorAll('.hover-sound').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                const sound = document.getElementById('hover-sound');
+                sound.play();
+            });
+        });
+    </script>
     <div class="container">
         <h2>About Me</h2>
         <p>
