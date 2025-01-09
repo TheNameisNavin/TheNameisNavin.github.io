@@ -88,6 +88,18 @@
         .carousel-arrow:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+        h2 {
+            text-align: center;
+            font-size: 3.3rem;
+            color: #3B99D8;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        h2:hover {
+            transform: translateY(-10px);
+            color: #5BB3E0;
+        }
     </style>
 </head>
 <body>
@@ -100,7 +112,7 @@
     <a href="contact.html">Contact</a>
 </nav>
 
-<h1 style="text-align: center; color: #3B99D8;">Testimonials</h1>
+<h2>Testimonials</h2>
 
 <div class="carousel">
     <button class="carousel-arrow left" onclick="moveCarousel(-1)">&#8249;</button>
