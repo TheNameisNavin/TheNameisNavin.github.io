@@ -8,71 +8,119 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Futura', 'Arial', sans-serif;
             background-color: #121212;
             color: #ffffff;
+            text-align: center;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
+
         nav {
             background-color: #1f1f1f;
             padding: 1rem;
             text-align: center;
         }
+
         nav a {
             margin: 0 1rem;
-            color: #4caf50;
+            color: #0F52BA;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
+
         nav a:hover {
-            font-size: 1.3rem;
-            background-color: #333333;
-            text-decoration: underline;
+            transform: scale(1.1);
+            background-color: #1E90FF;
+            color: #ffffff;
         }
-        .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
+
+        h1 {
+            font-size: 3.3rem;
+            color: #3B99D8;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
-        h2 {
-            border-bottom: 3px solid #4caf50;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
+
+        h1:hover {
+            transform: translateY(-10px);
+            color: #5BB3E0;
         }
-        .testimonial {
-            margin-bottom: 2rem;
+
+        .carousel {
+            display: flex;
+            gap: 2rem;
+            margin: 3rem auto;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
         }
-        h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: #4caf50;
+
+        .carousel-track {
+            display: flex;
+            gap: 1rem;
+            animation: scroll 15s linear infinite;
         }
-        p {
+
+        .carousel img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .carousel img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            margin-top: 3rem;
             font-size: 1.2rem;
-            color: #aaaaaa;
+            color: #7BC6E8;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 6)); /* Adjust based on the number of images */
+            }
         }
     </style>
 </head>
 <body>
-
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="container">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-            <h3>Testimonial from Person 1</h3>
-            <p>“Navin's work was outstanding. He demonstrated great skill and professionalism.”</p>
-        </div>
-        <div class="testimonial">
-            <h3>Testimonial from Person 2</h3>
-            <p>“Working with Navin was a pleasure. His expertise and commitment are commendable.”</p>
+    <h1>Testimonials</h1>
+    <p>Here’s what people are saying about my work!</p>
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="https://via.placeholder.com/300x300" alt="Testimonial 1">
+            <img src="https://via.placeholder.com/300x300" alt="Testimonial 2">
+            <img src="https://via.placeholder.com/300x300" alt="Testimonial 3">
+            <img src="https://via.placeholder.com/300x300" alt="Testimonial 4">
+            <img src="https://via.placeholder.com/300x300" alt="Testimonial 5">
+            <img src="https://via.placeholder.com/300x300" alt="Testimonial 6">
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2025 Navin Kumar S | All rights reserved.</p>
+    </footer>
 </body>
 </html>
