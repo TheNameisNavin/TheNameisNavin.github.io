@@ -38,32 +38,55 @@
 
         .carousel {
             display: flex;
-            overflow: hidden;
+            align-items: center;
+            justify-content: center;
             width: 80%;
             margin: 2rem auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             position: relative;
         }
 
         .carousel-track {
             display: flex;
-            animation: scroll 10s linear infinite; /* Slowed down the animation */
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
         }
 
         .carousel-item {
             min-width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .carousel-item img {
-            width: 100%;
+            width: 80%;
+            max-width: 800px;
             border-radius: 10px;
-            display: block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .carousel-arrow.left {
+            left: 10px;
+        }
+
+        .carousel-arrow.right {
+            right: 10px;
+        }
+
+        .carousel-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
@@ -77,10 +100,11 @@
     <a href="contact.html">Contact</a>
 </nav>
 
-<h1 style="text-align: center; color: #3B99D8;">Testimonials updated</h1>
+<h1 style="text-align: center; color: #3B99D8;">Testimonials</h1>
 
 <div class="carousel">
-    <div class="carousel-track">
+    <button class="carousel-arrow left" onclick="moveCarousel(-1)">&#8249;</button>
+    <div class="carousel-track" id="carousel-track">
         <!-- First Image -->
         <div class="carousel-item">
             <img src="images\new.png" alt="Testimonial Screenshot">
@@ -93,7 +117,24 @@
             <img src="https://via.placeholder.com/800x400.png?text=Testimonial+3" alt="Testimonial 3">
         </div>
     </div>
+    <button class="carousel-arrow right" onclick="moveCarousel(1)">&#8250;</button>
 </div>
+
+<script>
+    let currentIndex = 0;
+
+    function moveCarousel(direction) {
+        const track = document.getElementById('carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        // Update index
+        currentIndex = (currentIndex + direction + totalItems) % totalItems;
+
+        // Move the carousel
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+</script>
 
 </body>
 </html>
