@@ -3,28 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <title>Contact Me - Navin</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-      body {
+        body {
             margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
+            font-family: 'Futura', 'Arial', sans-serif;
             background-color: #121212;
             color: #ffffff;
-            overflow-y: auto; /* Enable vertical scrolling */
+            text-align: center; /* Center-align content */
+            overflow-y: auto;
         }
-      h1 {
-       text-align: center;
+
+        nav {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            color: #0F52BA;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            background-color: #1E90FF;
+            color: #ffffff;
+        }
+
+        h1 {
             font-size: 3.3rem;
             color: #3B99D8;
+            margin-top: 2rem;
             cursor: pointer;
-            position: relative;
             transition: transform 0.3s ease, color 0.3s ease;
-      }
+        }
+
+        h1:hover {
+            transform: translateY(-10px);
+            color: #5BB3E0;
+        }
+
+        p {
+            font-size: 1.6rem;
+            color: #D6E8F7;
+            margin: 1.5rem 0;
+        }
+
         .icon-container {
             display: flex;
             justify-content: center;
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .icon-container a {
@@ -43,22 +80,20 @@
         }
 
         footer {
-            
-            font-size: 1.6rem;
+            margin-top: 3rem;
+            font-size: 1.2rem;
             color: #7BC6E8;
-            text-align: left; /* Ensure text aligns from left to right */
-            line-height: 1.8;
-            margin-bottom: 1.5rem; /* Add spacing between paragraphs */
         }
     </style>
 </head>
 <body>
-<nav>
+    <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <h1>Contact Me</h1>
@@ -86,6 +121,6 @@
     <footer>
         <p>&copy; 2025 Navin Kumar S | All rights reserved.</p>
     </footer>
-
 </body>
 </html>
+
