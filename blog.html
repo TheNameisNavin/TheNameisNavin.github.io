@@ -6,12 +6,12 @@
     <title>Technology Stacks - Navin</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-         body {
+        body {
             margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
+            font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: #ffffff;
-            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden;
         }
 
         nav {
@@ -20,39 +20,31 @@
             text-align: center;
         }
 
-       nav a {
+        nav a {
             margin: 0 1rem;
-            color: #0F52BA;
+            color: #4caf50;
             text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            transform: scale(1.1);
-            background-color: #1E90FF;
             color: #ffffff;
         }
+
         .container {
             padding: 2rem;
             max-width: 1200px;
             margin: auto;
         }
+
         h2 {
             text-align: center;
-            font-size: 3.3rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
+            font-size: 2.5rem;
+            color: #4caf50;
+            margin-bottom: 2rem;
         }
-        h2:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
-        }
+
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -67,10 +59,13 @@
             padding: 1rem;
             transition: transform 0.3s ease, background-color 0.3s ease;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .tech-card:hover {
-            transform: translateY(-10px);
+            transform: scale(1.2);
             background-color: #4caf50;
             color: #000000;
         }
@@ -79,11 +74,6 @@
             width: 80px;
             height: 80px;
             margin-bottom: 1rem;
-        }
-
-        .tech-card h3 {
-            margin: 0.5rem 0;
-            font-size: 1.2rem;
         }
 
         /* Modal Styling */
@@ -146,64 +136,57 @@
 <div class="container">
     <h2>Technology Stacks</h2>
     <div class="tech-grid">
-        <div class="tech-card" onclick="showModal('Python', 'Im proficient in writing python scripts for running automations and varied other functionalities.')">
+        <!-- Python -->
+        <div class="tech-card" onclick="zoomCard('Python')">
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
-            <h3>Python</h3>
         </div>
-        <div class="tech-card" onclick="showModal('JavaScript', 'Used JS for dynamic web development and creating interactive interfaces.')">
+        <!-- JavaScript -->
+        <div class="tech-card" onclick="zoomCard('JavaScript')">
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
-            <h3>JavaScript</h3>
         </div>
-        <div class="tech-card" onclick="showModal('HTML5', 'Ive used it for web development, structuring content on the web.')">
+        <!-- HTML5 -->
+        <div class="tech-card" onclick="zoomCard('HTML5')">
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML5">
-            <h3>HTML5</h3>
         </div>
-        <div class="tech-card" onclick="showModal('CSS3', 'Used it to enhance the visual presentation of websites.')">
+        <!-- CSS3 -->
+        <div class="tech-card" onclick="zoomCard('CSS3')">
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" alt="CSS3">
-            <h3>CSS3</h3>
         </div>
-        <div class="tech-card" onclick="showModal('Linux', 'Skilled in linux and have intensely worked on the same for troubleshooting several networking issues, and for ethical hacking')">
+        <!-- Linux -->
+        <div class="tech-card" onclick="zoomCard('Linux')">
             <img src="https://cdn-icons-png.flaticon.com/512/226/226772.png" alt="Linux">
-            <h3>Linux</h3>
+        </div>
         <!-- SQL -->
-        <div class="tech-card" onclick="showModal('SQL', 'Used SQL for managing and manipulating relational databases.')">
+        <div class="tech-card" onclick="zoomCard('SQL')">
             <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="SQL">
-            <h3>SQL</h3>
         </div>
         <!-- VMware -->
-        <div class="tech-card" onclick="showModal('VMware', 'Used VMware for cloud computing and virtualization technology for businesses.')">
+        <div class="tech-card" onclick="zoomCard('VMware')">
             <img src="https://cdn-icons-png.flaticon.com/512/226/226741.png" alt="VMware">
-            <h3>VMware</h3>
         </div>
         <!-- API -->
-        <div class="tech-card" onclick="showModal('API', 'Utilized APIs to allow different software systems to communicate and integrate with each other.')">
+        <div class="tech-card" onclick="zoomCard('API')">
             <img src="https://cdn-icons-png.flaticon.com/512/2825/2825371.png" alt="API">
-            <h3>API</h3>
         </div>
         <!-- Postman -->
-        <div class="tech-card" onclick="showModal('Postman', 'Used Postman for developing and testing APIs.')">
+        <div class="tech-card" onclick="zoomCard('Postman')">
             <img src="https://cdn-icons-png.flaticon.com/512/2811/2811473.png" alt="Postman">
-            <h3>Postman</h3>
         </div>
         <!-- Salesforce -->
-        <div class="tech-card" onclick="showModal('Salesforce', 'Used Salesforce for customer relationship management.')">
+        <div class="tech-card" onclick="zoomCard('Salesforce')">
             <img src="https://cdn-icons-png.flaticon.com/512/226/226641.png" alt="Salesforce">
-            <h3>Salesforce</h3>
         </div>
         <!-- ServiceNow -->
-        <div class="tech-card" onclick="showModal('ServiceNow', 'Used ServiceNow to streamline business operations and workflows.')">
+        <div class="tech-card" onclick="zoomCard('ServiceNow')">
             <img src="https://cdn-icons-png.flaticon.com/512/226/226735.png" alt="ServiceNow">
-            <h3>ServiceNow</h3>
         </div>
         <!-- JSON/XML -->
-        <div class="tech-card" onclick="showModal('JSON/XML', 'Used JSON and XML for data interchange between systems.')">
+        <div class="tech-card" onclick="zoomCard('JSON/XML')">
             <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="JSON/XML">
-            <h3>JSON/XML</h3>
         </div>
         <!-- Chat/Email/Call Support -->
-        <div class="tech-card" onclick="showModal('Chat/Email/Call Support', 'Provided technical support via chat, email, or phone calls to assist users.')">
+        <div class="tech-card" onclick="zoomCard('Support')">
             <img src="https://cdn-icons-png.flaticon.com/512/727/727201.png" alt="Support">
-            <h3>Support</h3>
         </div>
     </div>
 </div>
@@ -212,15 +195,13 @@
 <div class="modal" id="tech-modal">
     <div class="modal-content">
         <h3 id="modal-title">Title</h3>
-        <p id="modal-description">Description</p>
         <button class="close-btn" onclick="closeModal()">Close</button>
     </div>
 </div>
 
 <script>
-    function showModal(title, description) {
+    function zoomCard(title) {
         document.getElementById('modal-title').textContent = title;
-        document.getElementById('modal-description').textContent = description;
         document.getElementById('tech-modal').style.display = 'flex';
     }
 
