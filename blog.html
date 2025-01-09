@@ -6,18 +6,20 @@
     <title>Technology Stacks - Navin</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-         body {
+        body {
             margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
+            font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: #ffffff;
-            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden;
         }
+
         nav {
             background-color: #1f1f1f;
             padding: 1rem;
             text-align: center;
         }
+
         nav a {
             margin: 0 1rem;
             color: #0F52BA;
@@ -28,17 +30,20 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
         }
+
         nav a:hover {
             transform: scale(1.1);
             background-color: #1E90FF;
             color: #ffffff;
         }
+
         .container {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
             position: relative;
         }
+
         h2 {
             text-align: center;
             font-size: 3.3rem;
@@ -47,42 +52,65 @@
             position: relative;
             transition: transform 0.3s ease, color 0.3s ease;
         }
+
         h2:hover {
             transform: translateY(-10px);
             color: #5BB3E0;
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
         }
 
-        .tech-card {
-            background-color: #1f1f1f;
-            border: 2px solid #4caf50;
-            border-radius: 10px;
-            text-align: center;
-            padding: 1rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            cursor: pointer;
+        .tech-stack-container {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            max-width: 100%;
         }
 
-        .tech-card:hover {
-            transform: scale(1.2);
+        .tech-stack {
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: #1f1f1f;
+            border: 2px solid #4caf50;
+            color: #ffffff;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 0 15%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .tech-stack:hover {
+            transform: scale(1.1);
             background-color: #4caf50;
-            color: #000000;
         }
 
-        .tech-card img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1rem;
+        .carousel-buttons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
         }
 
-        /* Modal Styling */
+        .carousel-button {
+            background-color: #4caf50;
+            color: #000;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background-color: #ffffff;
+            color: #4caf50;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -127,6 +155,7 @@
             background-color: #ffffff;
             color: #4caf50;
         }
+
     </style>
 </head>
 <body>
@@ -141,27 +170,20 @@
 
 <div class="container">
     <h2>Technology Stacks</h2>
-    <div class="tech-grid">
-        <!-- Python -->
-        <div class="tech-card" onclick="zoomCard('Python')">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
-        </div>
-        <!-- JavaScript -->
-        <div class="tech-card" onclick="zoomCard('JavaScript')">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
-        </div>
-        <!-- HTML5 -->
-        <div class="tech-card" onclick="zoomCard('HTML5')">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML5">
-        </div>
-        <!-- CSS3 -->
-        <div class="tech-card" onclick="zoomCard('CSS3')">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" alt="CSS3">
-        </div>
-        <!-- Linux -->
-        <div class="tech-card" onclick="zoomCard('Linux')">
-            <img src="https://cdn-icons-png.flaticon.com/512/226/226772.png" alt="Linux">
-        </div>
+    <div class="tech-stack-container" id="tech-stack-container">
+        <!-- Technology Stacks (initially showing 7) -->
+        <div class="tech-stack">Python</div>
+        <div class="tech-stack">JavaScript</div>
+        <div class="tech-stack">HTML5</div>
+        <div class="tech-stack">CSS3</div>
+        <div class="tech-stack">SQL</div>
+        <div class="tech-stack">Linux</div>
+        <div class="tech-stack">API</div>
+    </div>
+
+    <div class="carousel-buttons">
+        <button class="carousel-button" onclick="moveCarousel(-1)">&#8249;</button>
+        <button class="carousel-button" onclick="moveCarousel(1)">&#8250;</button>
     </div>
 </div>
 
@@ -174,6 +196,41 @@
 </div>
 
 <script>
+    const techStacks = [
+        'Python', 'JavaScript', 'HTML5', 'CSS3', 'SQL', 'Linux', 'API',
+        'VMware', 'Postman', 'Salesforce', 'ServiceNow', 'JSON/XML', 'Chat Support', 
+        'Email Support', 'Call Support'
+    ];
+
+    let currentIndex = 0;
+
+    function moveCarousel(direction) {
+        currentIndex += direction * 7;
+
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        }
+
+        if (currentIndex >= techStacks.length) {
+            currentIndex = techStacks.length - 7;
+        }
+
+        displayTechStacks();
+    }
+
+    function displayTechStacks() {
+        const container = document.getElementById('tech-stack-container');
+        container.innerHTML = '';
+
+        for (let i = currentIndex; i < currentIndex + 7 && i < techStacks.length; i++) {
+            const techStackDiv = document.createElement('div');
+            techStackDiv.className = 'tech-stack';
+            techStackDiv.textContent = techStacks[i];
+            techStackDiv.onclick = function() { zoomCard(techStacks[i]); };
+            container.appendChild(techStackDiv);
+        }
+    }
+
     function zoomCard(title) {
         document.getElementById('modal-title').textContent = title;
         document.getElementById('tech-modal').style.display = 'flex';
@@ -182,6 +239,8 @@
     function closeModal() {
         document.getElementById('tech-modal').style.display = 'none';
     }
+
+    displayTechStacks(); // Initial display
 </script>
 
 </body>
