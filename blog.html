@@ -60,12 +60,14 @@
 
         .tech-stack-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
             gap: 1rem;
             margin-bottom: 2rem;
             overflow: hidden;
             max-width: 100%;
+            padding: 1rem 0;
+            flex-wrap: wrap;
         }
 
         .tech-stack {
@@ -80,6 +82,10 @@
             align-items: center;
             flex: 1 0 15%;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Prevent overflow */
+            text-overflow: ellipsis; /* Truncate text */
+            max-width: 150px; /* Set max width to avoid too large elements */
         }
 
         .tech-stack:hover {
@@ -100,10 +106,15 @@
             color: #000;
             border: none;
             padding: 1rem;
-            border-radius: 50%;
+            border-radius: 50%; /* Circular shape */
             font-size: 2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 50px; /* Set fixed width and height for a circular button */
+            height: 50px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .carousel-button:hover {
