@@ -3,83 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Navin</title>
+    <title>Contact Me - Navin</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
+      body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
             background-color: #121212;
             color: #ffffff;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
-        nav {
-            background-color: #1f1f1f;
-            padding: 1rem;
-            text-align: center;
+
+        h1 {
+            color: #3B99D8; 
+            margin-bottom: 2rem;
         }
-        nav a {
-            margin: 0 1rem;
-            color: #4caf50;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-        }
-        h2 {
-            border-bottom: 3px solid #4caf50;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        form {
+
+        .icon-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
         }
-        input, textarea {
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            border: 1px solid #4caf50;
-            background-color: #1f1f1f;
-            color: #ffffff;
+
+        .icon-container a {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
         }
-        input[type="submit"] {
-            cursor: pointer;
-            background-color: #4caf50;
-            border: none;
-            color: #ffffff;
+
+        .icon-container a:hover {
+            transform: scale(1.2);
         }
-        input[type="submit"]:hover {
-            background-color: #388e3c;
+
+        .icon-container img {
+            width: 60px;
+            height: 60px;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 1.2rem;
+            color: #7BC6E8;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="testimonials.html">Testimonials</a>
-    </nav>
+    <h1>Contact Me</h1>
+    <p>Feel free to reach out to me on any of these platforms!</p>
 
-    <div class="container">
-        <h2>Contact Me</h2>
-        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <input type="submit" value="Send">
-        </form>
+    <div class="icon-container">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn">
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/TheNameisNavin" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+        </a>
+        <!-- Twitter -->
+        <a href="https://x.com/Monk910355" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+        </a>
+        <!-- Gmail -->
+        <a href="mailto:navinkumarspm@outlook.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+        </a>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Navin Kumar S | All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
