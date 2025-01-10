@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work experience</title>
+    <title>Work Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
+            font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: #ffffff;
-            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-y: auto;
         }
         nav {
             background-color: #1f1f1f;
@@ -24,7 +24,6 @@
             text-decoration: none;
             font-size: 1.8rem;
             transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
             padding: 0.5rem 1rem;
             border-radius: 5px;
         }
@@ -35,40 +34,51 @@
         }
         .container {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
-            position: relative;
         }
         h2 {
             text-align: center;
             font-size: 3.3rem;
             color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
+            margin-bottom: 2rem;
         }
-        h2:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
+        .work-experience {
+            background-color: #1f1f1f;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
-        p {
-            font-size: 1.6rem;
-            color: #D6E8F7;
-            text-align: left; /* Ensure text aligns from left to right */
-            line-height: 1.8;
-            margin-bottom: 1.5rem; /* Add spacing between paragraphs */
+        .work-experience img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
         }
-        img {
-            width: 100%;
-            max-width: 500px;
+        .details {
+            flex: 1;
+        }
+        .details h3 {
+            margin: 0;
+            color: #4caf50;
+            font-size: 1.8rem;
+        }
+        .details span {
             display: block;
-            margin: 30px auto;
-            border-radius: 10px; /* Optional: rounded corners for the image */
+            font-size: 1.2rem;
+            color: #d6e8f7;
+            margin: 0.2rem 0;
+        }
+        .details p {
+            margin: 0.8rem 0 0;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-
     <nav>
         <a href="index.html" class="hover-sound">Home</a>
         <a href="about.html" class="hover-sound">About Me</a>
@@ -77,31 +87,42 @@
         <a href="testimonials.html" class="hover-sound">Testimonials</a>
         <a href="contact.html" class="hover-sound">Contact</a>
     </nav>
-    <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script>
-        // JavaScript code to play sound on hover
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                const sound = document.getElementById('hover-sound');
-                sound.play();
-            });
-        });
-    </script>
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I'm a tech problem solver, API whisperer, photographer, and lifelong learner based in Chennai. 
-            With 4+ years of experience in SaaS, automation, and troubleshooting, I turn challenges into solutions 
-            and complexity into clarity.
-        </p>
-        <p>
-            When I’m not coding or diving into networks, I’m exploring new tools, creating art, making Arduino robots, 
-            sharing insights, and fueling my curiosity with endless tea ☕.  
-            And by the way, no one has ever seen me and Batman in the same room. Just saying.  
-        </p>
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmFsMDlvZHlkZWtxZWdwZjJpNG5oZmJ0MWJ0NTAxdDg2Mm4xbGR0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nZUcWtrNqs9Nu/giphy.gif" 
-             alt="Bat GIF">    
-    </div>
 
+    <div class="container">
+        <h2>Work Experience</h2>
+
+        <!-- Work Experience 1 -->
+        <div class="work-experience">
+            <img src="company1-logo.png" alt="Company 1 Logo">
+            <div class="details">
+                <h3>Role Title - Company Name</h3>
+                <span>Duration: Jan 2021 - Dec 2023</span>
+                <span>Location: Chennai, India</span>
+                <p>Brief job description goes here. Mention the key responsibilities, achievements, and any notable contributions made during the role.</p>
+            </div>
+        </div>
+
+        <!-- Work Experience 2 -->
+        <div class="work-experience">
+            <img src="company2-logo.png" alt="Company 2 Logo">
+            <div class="details">
+                <h3>Role Title - Company Name</h3>
+                <span>Duration: Jan 2019 - Dec 2020</span>
+                <span>Location: Bangalore, India</span>
+                <p>Brief job description goes here. Mention the key responsibilities, achievements, and any notable contributions made during the role.</p>
+            </div>
+        </div>
+
+        <!-- Work Experience 3 -->
+        <div class="work-experience">
+            <img src="company3-logo.png" alt="Company 3 Logo">
+            <div class="details">
+                <h3>Role Title - Company Name</h3>
+                <span>Duration: Jan 2017 - Dec 2018</span>
+                <span>Location: Hyderabad, India</span>
+                <p>Brief job description goes here. Mention the key responsibilities, achievements, and any notable contributions made during the role.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
