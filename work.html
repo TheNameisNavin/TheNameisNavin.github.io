@@ -6,12 +6,12 @@
     <title>Work Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
+       body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
             background-color: #121212;
             color: #ffffff;
-            overflow-y: auto;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         nav {
             background-color: #1f1f1f;
@@ -41,7 +41,13 @@
             text-align: center;
             font-size: 3.3rem;
             color: #3B99D8;
-            margin-bottom: 2rem;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        h2:hover {
+            transform: translateY(-10px);
+            color: #5BB3E0;
         }
         .work-experience {
             background-color: #1f1f1f;
@@ -95,10 +101,15 @@
         <div class="work-experience">
             <img src="company1-logo.png" alt="Company 1 Logo">
             <div class="details">
-                <h3>Role Title - Company Name</h3>
-                <span>Duration: Jan 2021 - Dec 2023</span>
+                <h3>Client Account Manager - IDP Education Ltd.</h3>
+                <span>Duration: Mar 2024 - July 2024</span>
+                <h3>Customer Success Specialist - IDP Education Ltd.</h3>
+                <span>Duration: July 2023 - Mar 2024</span>
                 <span>Location: Chennai, India</span>
-                <p>Brief job description goes here. Mention the key responsibilities, achievements, and any notable contributions made during the role.</p>
+                <p>● Conducted in-depth onboarding sessions to help 50+ clients fully implement product features, tailoring each deployment to meet specific business goals.<br> 
+                   ● Drove technical implementations using API to integrate and configure workflows and automation within CRM and other systems, ensuring client satisfaction.<br>
+                   ● Collaborated with Product and Engineering teams to address technical challenges and improve the product, acting as a key advocate for customer needs.<br> 
+                </p>
             </div>
         </div>
 
@@ -106,21 +117,26 @@
         <div class="work-experience">
             <img src="company2-logo.png" alt="Company 2 Logo">
             <div class="details">
-                <h3>Role Title - Company Name</h3>
-                <span>Duration: Jan 2019 - Dec 2020</span>
-                <span>Location: Bangalore, India</span>
-                <p>Brief job description goes here. Mention the key responsibilities, achievements, and any notable contributions made during the role.</p>
+                <h3>Product Specialist - Freshworks</h3>
+                <span>Duration: Apr 2022 - Mar 2023</span>
+                <span>Location: Chennai, India</span>
+                <p>● Spearheaded POCs and product evaluations with clients, provided hands-on technical support via tickets, email, chats and calls. Offered tailored solutions to meet client requirements.<br> 
+                   ● Presented product capabilities in client demos and onboarding, strengthening client engagement and identifying opportunities for upselling and new business. Reduced customer cases by 68%.<br> 
+                   ● Customized and integrated workflow automations using APIs, enhancing data flows and process efficiency across client platforms. Troubleshooting includes SSO login, alert and asset management.<br> 
+              </p>
             </div>
         </div>
 
         <!-- Work Experience 3 -->
         <div class="work-experience">
-            <img src="company3-logo.png" alt="Company 3 Logo">
+            <img src="images\tcs(1).png" alt="Company 3 Logo">
             <div class="details">
-                <h3>Role Title - Company Name</h3>
-                <span>Duration: Jan 2017 - Dec 2018</span>
-                <span>Location: Hyderabad, India</span>
-                <p>Brief job description goes here. Mention the key responsibilities, achievements, and any notable contributions made during the role.</p>
+                <h3>Assistant Systems Engineer - Tata Consultancy Services</h3>
+                <span>Duration: Nov 2020 - Apr 2022</span>
+                <span>Location: Chennai, India</span>
+                <p>● Developed and customized ServiceNow modules for scripting and enterprise workflows, ensuring robust API integration and alignment with business objectives.<br> 
+                   ● Partnered with cross-functional teams to resolve technical issues and optimize system functionality, supporting large-scale project implementations.<br> 
+                </p>
             </div>
         </div>
     </div>
