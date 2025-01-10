@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
+            background-color: #121212;
+            color: #ffffff;
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        nav {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #0F52BA;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            transform: scale(1.1);
+            background-color: #1E90FF;
+            color: #ffffff;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+        h2 {
+            text-align: center;
+            font-size: 3.3rem;
+            color: #3B99D8;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        h2:hover {
+            transform: translateY(-10px);
+            color: #5BB3E0;
+        }
+        p {
+            font-size: 1.6rem;
+            color: #D6E8F7;
+            text-align: left; /* Ensure text aligns from left to right */
+            line-height: 1.8;
+            margin-bottom: 1.5rem; /* Add spacing between paragraphs */
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px; /* Optional: rounded corners for the image */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Technology Stacks</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
+    <script>
+        // JavaScript code to play sound on hover
+        document.querySelectorAll('.hover-sound').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                const sound = document.getElementById('hover-sound');
+                sound.play();
+            });
+        });
+    </script>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            I'm a tech problem solver, API whisperer, photographer, and lifelong learner based in Chennai. 
+            With 4+ years of experience in SaaS, automation, and troubleshooting, I turn challenges into solutions 
+            and complexity into clarity.
+        </p>
+        <p>
+            When I’m not coding or diving into networks, I’m exploring new tools, creating art, making Arduino robots, 
+            sharing insights, and fueling my curiosity with endless tea ☕.  
+            And by the way, no one has ever seen me and Batman in the same room. Just saying.  
+        </p>
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmFsMDlvZHlkZWtxZWdwZjJpNG5oZmJ0MWJ0NTAxdDg2Mm4xbGR0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nZUcWtrNqs9Nu/giphy.gif" 
+             alt="Bat GIF">    
+    </div>
+
+</body>
+</html>
