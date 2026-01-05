@@ -1,7 +1,9 @@
+Welcome to My Digital Space!
 
+Hi there! I’m Navin Kumar S, a passionate tech enthusiast with a strong foundation in software development, cybersecurity, and automation. This website serves as a hub for my projects, experiences, and learnings, where I document my journey in the world of technology and problem-solving.
 
 Who Am I? :
-With nearly four years of experience in technical support, API integrations, and automation, I’ve had the opportunity to work with global clients across multiple time zones. I thrive on solving complex technical issues, optimizing systems, and diving deep into networking, security, and software development.
+With nearly five years of experience in API integrations, workflow automation and tech/dev support, I’ve had the opportunity to work with global clients across multiple time zones. I thrive on solving complex technical issues, optimizing systems, and diving deep into networking, security, and software development.
 
 What Drives Me? :
 🚀 Becoming a Software Developer & Cybersecurity Analyst. My goal is to build robust, secure, and scalable solutions while ensuring data integrity and protection in today’s ever-evolving tech landscape.
