@@ -78,6 +78,7 @@ h1 {
     gap: 30px;
 }
 
+/* CARD IS NOW THE LINK */
 .card {
     background: rgba(0,255,255,0.05);
     padding: 30px;
@@ -85,6 +86,9 @@ h1 {
     text-align: center;
     transition: 0.3s ease;
     border: 1px solid rgba(0,255,255,0.2);
+    text-decoration: none;
+    color: white;
+    display: block;
 }
 
 .card:hover {
@@ -97,16 +101,10 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* ===== LINK TEXT ===== */
-.card a {
-    color: #ffffff;
-    font-size: 1.8rem;
-    text-decoration: none;
+.card div {
+    font-size: 1.9rem;
     font-weight: 500;
-}
-
-.card a:hover {
-    color: #00ffcc;
+    color: #ffffff;
 }
 
 /* ===== RETRO SCANLINES ===== */
@@ -144,25 +142,25 @@ body::after {
 
     <div class="grid">
 
-        <div class="card hover-sound">
+        <a href="mailto:navinkumarspm@outlook.com" class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
-            <div><a href="mailto:navinkumarspm@outlook.com">Email</a></div>
-        </div>
+            <div>Email</div>
+        </a>
 
-        <div class="card hover-sound">
+        <a href="https://www.linkedin.com/in/thenameisnavin/" target="_blank" class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png">
-            <div><a href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">LinkedIn</a></div>
-        </div>
+            <div>LinkedIn</div>
+        </a>
 
-        <div class="card hover-sound">
+        <a href="https://github.com/TheNameisNavin" target="_blank" class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
-            <div><a href="https://github.com/TheNameisNavin" target="_blank">GitHub</a></div>
-        </div>
+            <div>GitHub</div>
+        </a>
 
-        <div class="card hover-sound">
+        <a href="https://x.com/Monk910355" target="_blank" class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
-            <div><a href="https://x.com/Monk910355" target="_blank">Twitter / X</a></div>
-        </div>
+            <div>Twitter / X</div>
+        </a>
 
     </div>
 </div>
@@ -186,4 +184,5 @@ updateClock();
 
 </body>
 </html>
+
 
