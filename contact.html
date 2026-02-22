@@ -8,26 +8,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* ===== BASE ===== */
 body {
     margin: 0;
     font-family: 'Rajdhani', sans-serif;
-    background: radial-gradient(circle at center, #0a0f1c, #000000 70%);
-    color: #d6f3ff;
+    background: #000;
+    color: #9dfcff;
     overflow-x: hidden;
 }
 
-/* ===== NAV ===== */
+/* ===== TETRIS BACKGROUND ===== */
+.tetris-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+.block {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(0,255,255,0.15);
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(110vh); }
+}
+
+/* ===== NAV (MATRIX STYLE) ===== */
 nav {
     background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
     padding: 1.2rem;
     text-align: center;
-    border-bottom: 1px solid rgba(0,255,255,0.3);
+    border-bottom: 1px solid #00ffcc;
 }
 
 nav a {
     margin: 0 1rem;
-    color: #00eaff;
+    color: #00ffcc;
     text-decoration: none;
     font-size: 2rem;
     padding: 0.5rem 1.2rem;
@@ -36,75 +55,47 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(0,255,255,0.15);
-    box-shadow: 0 0 10px #00eaff;
+    background: rgba(0,255,204,0.15);
+    box-shadow: 0 0 12px #00ffcc;
+}
+
+/* ===== CLOCK ===== */
+.clock {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #00ffcc;
 }
 
 /* ===== HOLOGRAM PANEL ===== */
-.hologram {
+.panel {
     max-width: 900px;
     margin: 80px auto;
     padding: 40px;
     border-radius: 20px;
-    background: rgba(0, 15, 25, 0.65);
-    backdrop-filter: blur(20px);
-    box-shadow:
-        0 0 20px rgba(0,255,255,0.3),
-        inset 0 0 30px rgba(0,255,255,0.1);
-    position: relative;
-}
-
-/* animated border scan */
-.hologram::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    border: 1px solid transparent;
-    background: linear-gradient(120deg, transparent, #00eaff, transparent) border-box;
-    mask:
-      linear-gradient(#000 0 0) padding-box,
-      linear-gradient(#000 0 0);
-    mask-composite: exclude;
-    animation: scan 6s linear infinite;
-}
-
-@keyframes scan {
-    from { background-position: 0 0; }
-    to { background-position: 400px 0; }
+    background: rgba(0, 10, 20, 0.65);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.3);
 }
 
 h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 3.5rem;
     text-align: center;
-    color: #00eaff;
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px #00eaff;
+    color: #00ffcc;
 }
 
-.subtitle {
-    text-align: center;
-    font-size: 1.6rem;
-    color: #7adfff;
-    margin-bottom: 40px;
-}
-
-/* ===== TERMINAL MESSAGE ===== */
+/* ===== HOLOGRAPHIC TYPING ===== */
 .terminal {
     font-family: monospace;
     background: rgba(0,0,0,0.6);
     padding: 20px;
-    border-radius: 10px;
-    border-left: 3px solid #00eaff;
-    margin-bottom: 40px;
-    line-height: 1.8;
+    border-left: 3px solid #00ffcc;
+    margin: 30px 0;
+    min-height: 140px;
 }
-
-.cursor {
-    animation: blink 1s infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
 
 /* ===== CONTACT CARDS ===== */
 .grid {
@@ -120,7 +111,6 @@ h1 {
     text-align: center;
     transition: 0.3s ease;
     border: 1px solid rgba(0,255,255,0.2);
-    cursor: pointer;
 }
 
 .card:hover {
@@ -130,109 +120,193 @@ h1 {
 
 .card img {
     width: 60px;
-    margin-bottom: 10px;
 }
 
-.card span {
-    display: block;
-    margin-top: 5px;
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+    margin-top: 50px;
+    border-top: 1px solid rgba(0,255,255,0.3);
+    padding-top: 30px;
+}
+
+.testimonial {
+    margin: 20px 0;
     font-size: 1.4rem;
+    color: #bdfcff;
 }
 
-/* ===== SIGNAL RADAR ===== */
+/* ===== SUBMARINE RADAR ===== */
 .radar {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    border: 1px solid rgba(0,255,255,0.3);
+    border: 2px solid rgba(0,255,255,0.3);
 }
-
 .radar::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: conic-gradient(transparent 85%, #00eaff);
+    background: conic-gradient(transparent 85%, #00ffcc);
     animation: rotate 3s linear infinite;
 }
-
 .radar::after {
     content: "";
     position: absolute;
-    inset: 15%;
+    inset: 20%;
     border-radius: 50%;
-    border: 1px solid rgba(0,255,255,0.3);
+    border: 1px solid rgba(0,255,255,0.4);
 }
-
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-footer {
-    text-align: center;
-    margin: 60px 0 20px;
-    color: #6edbff;
+/* ===== ROBOT ===== */
+.robot {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    width: 180px;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}
+
+/* ===== RETRO STYLE ===== */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(0,255,255,0.03) 3px
+    );
+    pointer-events: none;
 }
 </style>
 </head>
 
 <body>
 
+<div class="tetris-bg" id="tetris"></div>
+
+<div class="clock" id="clock"></div>
+
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="work.html">Work</a>
-    <a href="projects.html">Projects</a>
-    <a href="blog.html">Tech Stack</a>
+    <a href="index.html" class="hover-sound">Home</a>
+    <a href="about.html" class="hover-sound">About</a>
+    <a href="work.html" class="hover-sound">Work</a>
+    <a href="projects.html" class="hover-sound">Projects</a>
+    <a href="blog.html" class="hover-sound">Tech Stack</a>
+    <a href="testimonials.html" class="hover-sound">Testimonials</a>
 </nav>
 
-<div class="hologram">
-    <h1>CONTACT NAVIN</h1>
-    <div class="subtitle">Secure Communication Channel Active</div>
+<audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
 
-    <div class="terminal">
-        > initializing connection...<br>
-        > identity verified: Navin Kumar S<br>
-        > role: SaaS Specialist | Automation Engineer<br>
-        > location: Chennai Node<br>
-        > status: available for collaboration<br>
-        > awaiting transmission<span class="cursor">|</span>
-    </div>
+<div class="panel">
+    <h1>CONTACT NAVIN</h1>
+
+    <div class="terminal" id="terminal"></div>
 
     <div class="grid">
-
-        <a class="card" href="mailto:navinkumarspm@outlook.com">
+        <a class="card hover-sound" href="mailto:navinkumarspm@outlook.com">
             <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
-            <span>Email</span>
+            <div>Email</div>
         </a>
 
-        <a class="card" href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">
+        <a class="card hover-sound" href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png">
-            <span>LinkedIn</span>
+            <div>LinkedIn</div>
         </a>
 
-        <a class="card" href="https://github.com/TheNameisNavin" target="_blank">
+        <a class="card hover-sound" href="https://github.com/TheNameisNavin" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
-            <span>GitHub</span>
+            <div>GitHub</div>
         </a>
 
-        <a class="card" href="https://x.com/Monk910355" target="_blank">
+        <a class="card hover-sound" href="https://x.com/Monk910355" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
-            <span>Twitter / X</span>
+            <div>Twitter / X</div>
         </a>
+    </div>
 
+    <div class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">“Navin solves problems faster than most support teams respond.”</div>
+        <div class="testimonial">“Exceptional automation mindset and deep SaaS expertise.”</div>
+        <div class="testimonial">“Calm, precise, and extremely reliable under pressure.”</div>
     </div>
 </div>
 
+<img class="robot" id="robot"
+src="https://i.imgur.com/6RMhx.gif">
+
 <div class="radar"></div>
 
-<footer>
-    © 2026 NavTech Systems — Signal Secured
-</footer>
+<script>
+/* ===== HOVER SOUND ===== */
+document.querySelectorAll('.hover-sound').forEach(link => {
+    link.addEventListener('mouseover', () => {
+        document.getElementById('hover-sound').play();
+    });
+});
+
+/* ===== CLOCK ===== */
+function updateClock(){
+    document.getElementById("clock").innerText =
+    new Date().toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+
+/* ===== HOLOGRAPHIC TYPING ===== */
+const text = [
+"> establishing secure channel...",
+"> identity verified: Navin Kumar S",
+"> role: SaaS Specialist / Automation Engineer",
+"> node: Chennai",
+"> status: available for collaboration",
+"> awaiting input..."
+];
+
+let i=0,j=0;
+function type(){
+    if(i<text.length){
+        if(j<text[i].length){
+            document.getElementById("terminal").innerHTML += text[i][j];
+            j++;
+            setTimeout(type,20);
+        } else {
+            document.getElementById("terminal").innerHTML += "<br>";
+            i++; j=0;
+            setTimeout(type,300);
+        }
+    }
+}
+type();
+
+/* ===== ROBOT FOLLOW CURSOR ===== */
+document.addEventListener("mousemove", e=>{
+    const robot = document.getElementById("robot");
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    robot.style.transform = `rotate(${x}deg) translateY(${y}px)`;
+});
+
+/* ===== TETRIS BLOCKS ===== */
+const container = document.getElementById("tetris");
+for(let i=0;i<60;i++){
+    const b=document.createElement("div");
+    b.className="block";
+    b.style.left=Math.random()*100+"vw";
+    b.style.animationDuration=(5+Math.random()*10)+"s";
+    container.appendChild(b);
+}
+</script>
 
 </body>
 </html>
