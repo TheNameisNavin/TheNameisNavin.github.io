@@ -1,175 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-       body {
-            margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
-            background-color: #121212;
-            color: #ffffff;
-            overflow-y: auto; /* Enable vertical scrolling */
-        }
-        nav {
-            background-color: #1f1f1f;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 1rem;
-            color: #0F52BA;
-            text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-        nav a:hover {
-            transform: scale(1.1);
-            background-color: #1E90FF;
-            color: #ffffff;
-        }
-        .container {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h2 {
-            text-align: center;
-            font-size: 3.3rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        h2:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
-        }
-        .work-experience {
-            background-color: #1f1f1f;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .work-experience img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .details {
-            flex: 1;
-        }
-        .details h3 {
-            margin: 0;
-            color: #5BB3E0;
-            font-size: 1.8rem;
-        }
-        .details span {
-            display: block;
-            font-size: 1.4rem;
-            color: #d6e8f7;
-            margin: 0.2rem 0;
-        }
-        .details p {
-            font-size: 1.2rem;
-            margin: 1.4rem 0 0;
-            line-height: 1.9;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Experience</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #e6f7ff;
+    background: radial-gradient(circle at 50% 20%, #081018 0%, #020509 70%);
+}
+
+/* NAV */
+nav {
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,255,200,0.2);
+}
+
+nav a {
+    margin: 0 1rem;
+    color: #7fe7ff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+/* CLOCK RIGHT MIDDLE */
+#clockBox {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14px 22px;
+    border: 2px solid #00f0ff;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 25px rgba(0,240,255,0.5);
+    z-index: 5;
+}
+
+#clock {
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* RADAR LEFT MIDDLE */
+#radarContainer {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 2px solid #00f0ff;
+    box-shadow: 0 0 25px rgba(0,240,255,0.5);
+    background: radial-gradient(circle, rgba(0,255,200,0.08), transparent 70%);
+}
+
+/* MAIN PANEL */
+.container {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #7fe7ff;
+    margin-bottom: 2.5rem;
+}
+
+/* WORK CARDS */
+.work-experience {
+    background: rgba(0,0,0,0.45);
+    padding: 1.6rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid rgba(0,255,200,0.15);
+    transition: 0.3s;
+}
+
+.work-experience:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0,240,255,0.25);
+}
+
+.work-experience img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.details h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #7fe7ff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.details span {
+    display: block;
+    font-size: 1rem;
+    color: #c7f6ff;
+    margin-top: 4px;
+}
+
+.details p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.7;
+    color: #e6f7ff;
+}
+
+</style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW5H1S2Z1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-BWW5H1S2Z1');
-</script>
 <body>
-    <nav>
-        <a href="index.html" class="hover-sound">Home</a>
-        <a href="about.html" class="hover-sound">About Me</a>
-        <a href="projects.html" class="hover-sound">Projects</a>
-        <a href="blog.html" class="hover-sound">Technology Stacks</a>
-        <a href="testimonials.html" class="hover-sound">Testimonials</a>
-        <a href="contact.html" class="hover-sound">Contact</a>
-    </nav>
 
-    <div class="container">
-        <h2>Work Experience</h2>
+<div id="radarContainer">
+    <canvas id="radar"></canvas>
+</div>
 
-        <!-- Work Experience 4 -->
-        <!--<div class="work-experience">
-            <img src="images/idp.png" alt="Company 1 Logo">
-            <div class="details">
-                <h3>Lead Software Engineer - Sogeti India</h3>
-                <span>Duration: June 2025 - Present</span>
-                <span>Location: Chennai, India</span>
-                <p>● Leading end-to-end Python development (Django/Flask/FastAPI), architecting scalable APIs and automation scripts, and enforcing code quality through reviews, unit testing, 
-                     and CI/CD - cutting deployment time and defects across releases.<br>
-                   ● Delivered 12 microservices and 18 automation scripts; improved build/deploy time by 45% with GitHub Actions and tested gating, reducing production defects by 32%.<br>
-                   ● Designed ITSM workflows in Freshservice, configuring Incident/Problem/Change/Asset modules, SLAs, and automations; improved ticket triage and 
-                     resolution with rules, approvals, and service catalog enhancements.<br>
-                   ● Building integrations between Freshservice and enterprise systems using REST APIs/webhooks, enabling event-to-incident automation, richer ticket 
-                     context, and robust change governance.<br>
-                   ● Driving operational excellence with SLA/MTTR dashboards and Python performance tuning (async I/O, query/index optimization), achieving 97% SLA compliance, 
-                     35% latency reduction, and 25% fewer incident regressions.<br> 
-                </p>
-            </div>
-        </div>
+<div id="clockBox"><div id="clock"></div></div>
 
-        
-        <!-- Work Experience 3 -->
-        <div class="work-experience">
-            <img src="images/idp.png" alt="Company 1 Logo">
-            <div class="details">
-                <h3>Client Account Manager - IDP Education Ltd.</h3>
-                <span> <!--Duration:--> Mar 2024 - July 2024</span>
-                <h3>Customer Success Specialist - IDP Education Ltd.</h3>
-                <span><!--Duration:--> July 2023 - Mar 2024</span>
-                <span>Location: Chennai, India</span>
-                  <!-- <p>● Conducted in-depth onboarding sessions to help 50+ clients fully implement product features, tailoring each deployment to meet specific business goals.<br> 
-                   ● Drove technical implementations using API to integrate and configure workflows and automation within CRM and other systems, ensuring client satisfaction.<br>
-                   ● Collaborated with Product and Engineering teams to address technical challenges and improve the product, acting as a key advocate for customer needs.<br> 
-                </p>-->
-            </div>
-        </div>
+<nav>
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About Me</a>
+<a href="projects.html" class="nav-link">Projects</a>
+<a href="blog.html" class="nav-link">Technology Stacks</a>
+<a href="testimonials.html" class="nav-link">Testimonials</a>
+<a href="contact.html" class="nav-link">Contact</a>
+</nav>
 
-        <!-- Work Experience 2 -->
-        <div class="work-experience">
-            <img src="images/fw1.png" alt="Company 2 Logo">
-            <div class="details">
-                <h3>Product Specialist - Freshworks</h3>
-                <span>Apr 2022 - Mar 2023</span>
-                <span>Location: Chennai, India</span>
-                 <!--  <p>● Spearheaded POCs and product evaluations with clients, provided hands-on technical support via tickets, email, chats and calls. Offered tailored solutions to meet client requirements.<br> 
-                   ● Presented product capabilities in client demos and onboarding, strengthening client engagement and identifying opportunities for upselling and new business. Reduced customer cases by 68%.<br> 
-                   ● Customized and integrated workflow automations using APIs, enhancing data flows and process efficiency across client platforms. Troubleshooting includes SSO login, alert and asset management.<br> 
-              </p>-->
-            </div>
-        </div>
+<audio id="clickSound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
 
-        <!-- Work Experience 1 -->
-        <div class="work-experience">
-            <img src="images/tcs.png" alt="Company 3 Logo">
-            <div class="details">
-                <h3>Assistant Systems Engineer - Tata Consultancy Services</h3>
-                <span>Nov 2020 - Apr 2022</span>
-                <span>Location: Chennai, India</span>
-                  <!-- <p>● Developed and customized ServiceNow modules for scripting and enterprise workflows, ensuring robust API integration and alignment with business objectives.<br> 
-                   ● Partnered with cross-functional teams to resolve technical issues and optimize system functionality, supporting large-scale project implementations.<br> 
-                </p>-->
-            </div>
-        </div>
-    </div>
+<div class="container">
+<h2>Work Experience</h2>
+
+<div class="work-experience">
+<img src="images/idp.png">
+<div class="details">
+<h3>Client Account Manager — IDP Education Ltd.</h3>
+<span>Mar 2024 — July 2024</span>
+<h3>Customer Success Specialist — IDP Education Ltd.</h3>
+<span>July 2023 — Mar 2024</span>
+<span>Chennai, India</span>
+</div>
+</div>
+
+<div class="work-experience">
+<img src="images/fw1.png">
+<div class="details">
+<h3>Product Specialist — Freshworks</h3>
+<span>Apr 2022 — Mar 2023</span>
+<span>Chennai, India</span>
+</div>
+</div>
+
+<div class="work-experience">
+<img src="images/tcs.png">
+<div class="details">
+<h3>Assistant Systems Engineer — Tata Consultancy Services</h3>
+<span>Nov 2020 — Apr 2022</span>
+<span>Chennai, India</span>
+</div>
+</div>
+
+</div>
+
+<script>
+
+/* CLOCK */
+function updateClock() {
+    document.getElementById("clock").innerText =
+        new Date().toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+/* NAV CLICK SOUND */
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("clickSound").play();
+    });
+});
+
+/* RADAR */
+const canvas = document.getElementById("radar");
+const ctx = canvas.getContext("2d");
+
+canvas.width = 190;
+canvas.height = 190;
+
+let angle = 0;
+
+function drawRadar() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    const cx = canvas.width/2;
+    const cy = canvas.height/2;
+
+    ctx.strokeStyle = "#00f0ff";
+    ctx.beginPath();
+    ctx.arc(cx,cy,80,0,Math.PI*2);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(cx,cy,55,0,Math.PI*2);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx,cy);
+    ctx.lineTo(cx + 80*Math.cos(angle), cy + 80*Math.sin(angle));
+    ctx.strokeStyle = "#00f0ff";
+    ctx.stroke();
+
+    angle += 0.02;
+    requestAnimationFrame(drawRadar);
+}
+
+drawRadar();
+
+</script>
+
 </body>
 </html>
+
