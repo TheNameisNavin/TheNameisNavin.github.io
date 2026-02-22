@@ -1,145 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Navin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center; /* Center-align content */
-            overflow-y: auto;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Navin</title>
 
-        nav {
-            background-color: #1f1f1f;
-            padding: 1rem;
-            text-align: center;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
 
-        nav a {
-            margin: 0 1rem;
-            color: #0F52BA;
-            text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Rajdhani', sans-serif;
+    background: radial-gradient(circle at center, #0a0f1c, #000000 70%);
+    color: #d6f3ff;
+    overflow-x: hidden;
+}
 
-        nav a:hover {
-            transform: scale(1.1);
-            background-color: #1E90FF;
-            color: #ffffff;
-        }
+/* ===== NAV ===== */
+nav {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,255,255,0.3);
+}
 
-        h1 {
-            font-size: 3.3rem;
-            color: #3B99D8;
-            margin-top: 2rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+nav a {
+    margin: 0 1rem;
+    color: #00eaff;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
 
-        h1:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
-        }
+nav a:hover {
+    background: rgba(0,255,255,0.15);
+    box-shadow: 0 0 10px #00eaff;
+}
 
-        p {
-            font-size: 1.6rem;
-            color: #D6E8F7;
-            margin: 1.5rem 0;
-        }
+/* ===== HOLOGRAM PANEL ===== */
+.hologram {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(0, 15, 25, 0.65);
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.3),
+        inset 0 0 30px rgba(0,255,255,0.1);
+    position: relative;
+}
 
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+/* animated border scan */
+.hologram::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background: linear-gradient(120deg, transparent, #00eaff, transparent) border-box;
+    mask:
+      linear-gradient(#000 0 0) padding-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    animation: scan 6s linear infinite;
+}
 
-        .icon-container a {
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.3s ease;
-        }
+@keyframes scan {
+    from { background-position: 0 0; }
+    to { background-position: 400px 0; }
+}
 
-        .icon-container a:hover {
-            transform: scale(1.2);
-        }
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #00eaff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #00eaff;
+}
 
-        .icon-container img {
-            width: 60px;
-            height: 60px;
-        }
+.subtitle {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #7adfff;
+    margin-bottom: 40px;
+}
 
-        footer {
-            margin-top: 3rem;
-            font-size: 1.2rem;
-            color: #7BC6E8;
-        }
-    </style>
+/* ===== TERMINAL MESSAGE ===== */
+.terminal {
+    font-family: monospace;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 3px solid #00eaff;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ===== CONTACT CARDS ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(0,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s ease;
+    border: 1px solid rgba(0,255,255,0.2);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+.card img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.card span {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+/* ===== SIGNAL RADAR ===== */
+.radar {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,255,255,0.3);
+}
+
+.radar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(transparent 85%, #00eaff);
+    animation: rotate 3s linear infinite;
+}
+
+.radar::after {
+    content: "";
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    border: 1px solid rgba(0,255,255,0.3);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+footer {
+    text-align: center;
+    margin: 60px 0 20px;
+    color: #6edbff;
+}
+</style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW5H1S2Z1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-BWW5H1S2Z1');
-</script>
 <body>
-    <nav>
-        <a href="index.html" class="hover-sound">Home</a>
-        <a href="about.html" class="hover-sound">About Me</a>
-        <a href="work.html" class="hover-sound">Work Experience</a>
-        <a href="projects.html" class="hover-sound">Projects</a>
-        <a href="blog.html" class="hover-sound">Technology Stacks</a>
-        <a href="testimonials.html" class="hover-sound">Testimonials</a>
-        
-    </nav>
-    <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script>
-        // JavaScript code to play sound on hover
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                const sound = document.getElementById('hover-sound');
-                sound.play();
-            });
-        });
-    </script>
-    <h1>Contact Me</h1>
-    <p>Feel free to reach out to me on any of these platforms!!!</p>
 
-    <div class="icon-container">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn">
-        </a>
-        <!-- GitHub -->
-        <a href="https://github.com/TheNameisNavin" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-        </a>
-        <!-- Twitter -->
-        <a href="https://x.com/Monk910355" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-        </a>
-        <!-- Gmail -->
-        <a href="mailto:navinkumarspm@gmail.com">
-            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
-        </a>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Tech Stack</a>
+</nav>
+
+<div class="hologram">
+    <h1>CONTACT NAVIN</h1>
+    <div class="subtitle">Secure Communication Channel Active</div>
+
+    <div class="terminal">
+        > initializing connection...<br>
+        > identity verified: Navin Kumar S<br>
+        > role: SaaS Specialist | Automation Engineer<br>
+        > location: Chennai Node<br>
+        > status: available for collaboration<br>
+        > awaiting transmission<span class="cursor">|</span>
     </div>
 
-    <footer>
-        <p>&copy; 2026 NavTech Designs | All rights reserved.</p>
-    </footer>
+    <div class="grid">
+
+        <a class="card" href="mailto:navinkumarspm@outlook.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+            <span>Email</span>
+        </a>
+
+        <a class="card" href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png">
+            <span>LinkedIn</span>
+        </a>
+
+        <a class="card" href="https://github.com/TheNameisNavin" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+            <span>GitHub</span>
+        </a>
+
+        <a class="card" href="https://x.com/Monk910355" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
+            <span>Twitter / X</span>
+        </a>
+
+    </div>
+</div>
+
+<div class="radar"></div>
+
+<footer>
+    © 2026 NavTech Systems — Signal Secured
+</footer>
+
 </body>
 </html>
 
