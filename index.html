@@ -4,45 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navin's Space</title>
+
     <style>
         body {
             margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
-            background-color: #121212;
-            color: #ffffff;
-            overflow-y: auto;
+            font-family: 'Futura', 'Arial', sans-serif;
+            background-color: black;
+            color: #00ff9f;
+            overflow-x: hidden;
         }
 
-        /* Particles.js container */
-        #particles-js {
+        /* Matrix canvas background */
+        #matrix {
             position: fixed;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
             z-index: -1;
         }
 
         nav {
-            background-color: #1f1f1f;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 1rem;
             text-align: center;
         }
 
         nav a {
             margin: 0 1rem;
-            color: #0F52BA;
+            color: #00ff9f;
             text-decoration: none;
             font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease, color 0.3s ease;
             display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
         }
 
         nav a:hover {
             transform: scale(1.1);
-            background-color: #1E90FF;
             color: #ffffff;
         }
 
@@ -50,181 +46,104 @@
             padding: 2rem;
             max-width: 800px;
             margin: auto;
-            position: relative;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             font-size: 3.3rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
+            color: #00ff9f;
+            transition: transform 0.3s ease;
         }
 
-        /* Floating effect on hover */
         h1:hover {
-            transform: translateY(-15px);
-            color: #5BB3E0;
-            
+            transform: translateY(-10px);
         }
 
         p {
             font-size: 2rem;
-            color: #D6E8F7;
-            text-align: center;
-            position: relative;
-            
+            color: #b6ffe0;
         }
     </style>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW5H1S2Z1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BWW5H1S2Z1');
-</script>
-    
 <body>
 
-    <!-- Particles.js container -->
-    <div id="particles-js"></div>
+<canvas id="matrix"></canvas>
 
-    <nav>
-        <a href="about.html" class="hover-sound">About Me</a>
-        <a href="projects.html" class="hover-sound">Projects</a>
-        <a href="work.html" class="hover-sound">Work Experience</a>
-        <a href="blog.html" class="hover-sound">Technology Stacks</a>
-        <a href="testimonials.html" class="hover-sound">Testimonials</a>
-        <a href="contact.html" class="hover-sound">Contact</a>
-    </nav>
-   <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script>
-        // JavaScript code to play sound on hover
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                const sound = document.getElementById('hover-sound');
-                sound.play();
-            });
-        });
-    </script>
-    <div class="container">
-        <h1>Hey there! I'm Navin.</h1>
-        <p>Welcome to my profile!!</p>
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXR1YnRmeGRscHA0ZTlkandoYzMxOXNjMzVkdzEzbWNoM2ZxNGd5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QYkX9IMHthYn0Y3pcG/giphy.gif" alt="Exciting GIF" style="width: 100%; max-width: 400px; display: block; margin: 20px auto;">    
+<nav>
+    <a href="about.html" class="hover-sound">About Me</a>
+    <a href="projects.html" class="hover-sound">Projects</a>
+    <a href="work.html" class="hover-sound">Work Experience</a>
+    <a href="blog.html" class="hover-sound">Technology Stacks</a>
+    <a href="testimonials.html" class="hover-sound">Testimonials</a>
+    <a href="contact.html" class="hover-sound">Contact</a>
+</nav>
 
-    <!-- Particles.js script -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        /* Load particles.js with custom configuration */
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 5,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
+<audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
+
+<div class="container">
+    <h1>Hey there! I'm Navin.</h1>
+    <p>Welcome to my profile!!</p>
+
+    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXR1YnRmeGRscHA0ZTlkandoYzMxOXNjMzVkdzEzbWNoM2ZxNGd5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QYkX9IMHthYn0Y3pcG/giphy.gif"
+         style="width: 100%; max-width: 400px; display: block; margin: 20px auto;">
+</div>
+
+<script>
+/* Hover sound */
+document.querySelectorAll('.hover-sound').forEach(link => {
+    link.addEventListener('mouseover', () => {
+        document.getElementById('hover-sound').play();
+    });
+});
+
+/* MATRIX RAIN EFFECT */
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "アァイィウヴエカキクケコサシスセソ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const matrix = letters.split("");
+
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+
+for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+}
+
+function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff9f";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = matrix[Math.floor(Math.random() * matrix.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(drawMatrix, 33);
+
+window.addEventListener("resize", () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+});
+</script>
+
 </body>
 </html>
+
