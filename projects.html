@@ -67,14 +67,23 @@ h2, h3 {
 
 p { line-height: 1.7; }
 
-/* CLOCK RIGHT MIDDLE */
-#clock {
+/* RETRO CLOCK BOX */
+#clockBox {
     position: fixed;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
-    text-shadow: 0 0 10px #ff6a00;
+    padding: 14px 22px;
+    border: 2px solid #ff6a00;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 25px rgba(255,100,40,0.6);
+}
+
+#clock {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px #ff6a00;
 }
 
 /* ROBOT LEFT MIDDLE */
@@ -83,56 +92,67 @@ p { line-height: 1.7; }
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 110px;
-    height: 110px;
+    width: 190px;
+    height: 190px;
 }
 
-/* OPTIMUS STYLE HEAD */
+/* COOL ROBOT HEAD */
 .robot-head {
     width: 100%;
     height: 100%;
-    background: linear-gradient(#222, #111);
-    border: 2px solid #ff6a00;
-    border-radius: 12px;
+    background: linear-gradient(#2b2b2b, #0f0f0f);
+    border: 3px solid #ff6a00;
+    border-radius: 16px;
     position: relative;
-    box-shadow: 0 0 20px rgba(255,100,40,0.6);
+    box-shadow: 0 0 30px rgba(255,100,40,0.8);
     transition: transform 0.1s;
+}
+
+.helmet-line {
+    position: absolute;
+    width: 80%;
+    height: 6px;
+    background: #ff6a00;
+    left: 10%;
+    top: 18px;
+    box-shadow: 0 0 12px #ff6a00;
 }
 
 .face-plate {
     position: absolute;
-    bottom: 15px;
+    bottom: 25px;
     left: 50%;
-    width: 50px;
-    height: 30px;
+    width: 70px;
+    height: 45px;
     transform: translateX(-50%);
-    background: #333;
-    border-radius: 6px;
+    background: #222;
+    border-radius: 8px;
 }
 
 .eye {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     background: #00eaff;
     border-radius: 50%;
     position: absolute;
-    top: 30px;
-    box-shadow: 0 0 10px #00eaff;
+    top: 60px;
+    box-shadow: 0 0 15px #00eaff;
 }
 
-.eye.left { left: 20px; }
-.eye.right { right: 20px; }
+.eye.left { left: 40px; }
+.eye.right { right: 40px; }
 
-/* LANDING ANIMATION */
+/* MARS PROBE LANDING */
 #lander {
     position: fixed;
     top: -200px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 120px;
-    background: #ccc;
-    border-radius: 10px;
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(#ddd, #999);
+    border-radius: 8px;
+    box-shadow: 0 0 20px #ff6a00;
     animation: land 3s ease-out forwards;
 }
 
@@ -147,8 +167,8 @@ p { line-height: 1.7; }
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 120px;
-    background: radial-gradient(circle, rgba(255,140,60,0.5), transparent);
+    height: 140px;
+    background: radial-gradient(circle, rgba(255,140,60,0.6), transparent);
     opacity: 0;
     animation: dust 3s ease-out forwards;
 }
@@ -166,10 +186,11 @@ p { line-height: 1.7; }
 <div id="lander"></div>
 <div class="dust"></div>
 
-<div id="clock"></div>
+<div id="clockBox"><div id="clock"></div></div>
 
 <div id="robot">
     <div class="robot-head" id="head">
+        <div class="helmet-line"></div>
         <div class="eye left" id="eyeL"></div>
         <div class="eye right" id="eyeR"></div>
         <div class="face-plate"></div>
@@ -177,13 +198,15 @@ p { line-height: 1.7; }
 </div>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About Me</a>
-<a href="work.html">Work Experience</a>
-<a href="blog.html">Technology Stacks</a>
-<a href="testimonials.html">Testimonials</a>
-<a href="contact.html">Contact</a>
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About Me</a>
+<a href="work.html" class="nav-link">Work Experience</a>
+<a href="blog.html" class="nav-link">Technology Stacks</a>
+<a href="testimonials.html" class="nav-link">Testimonials</a>
+<a href="contact.html" class="nav-link">Contact</a>
 </nav>
+
+<audio id="clickSound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
 
 <div class="container">
 <h2>Projects</h2>
@@ -191,31 +214,23 @@ p { line-height: 1.7; }
 <div class="project-item">
 <h3>Virtual Interface Command and Target Obliterating Robot (V.I.C.T.O.R)</h3>
 <p><a href="https://github.com/Navinakastark/VICTOR">Visit GitHub</a></p>
-<p>
-Semi-autonomous defence robotics system using embedded microcontrollers and sensors for long-distance control, attack and surveillance.
-</p>
+<p>Semi-autonomous defence robotics system using embedded microcontrollers and sensors for long-distance control, attack and surveillance.</p>
 </div>
 
 <div class="project-item">
 <h3>Spending Insight Pro Model</h3>
 <p><a href="https://github.com/Navinakastark/datas">Visit GitHub</a></p>
-<p>
-Monthly expenditure analysis using Python, Pandas and machine learning. Includes feature engineering, predictive modeling and PowerBI visualization.
-</p>
+<p>Monthly expenditure analysis using Python, Pandas and machine learning. Includes feature engineering, predictive modeling and PowerBI visualization.</p>
 </div>
 
 <div class="project-item">
 <h3>Home Security Using Python and OpenCV</h3>
-<p>
-AI-powered home monitoring system using OpenCV and deep learning libraries. Supports threat detection and live streaming alerts.
-</p>
+<p>AI-powered home monitoring system using OpenCV and deep learning libraries. Supports threat detection and live streaming alerts.</p>
 </div>
 
 <div class="project-item">
 <h3>Cube Satellite for Atmospheric Data Collection</h3>
-<p>
-CubeSat designed for tropospheric data acquisition using advanced sensors and communication modules for environmental analysis.
-</p>
+<p>CubeSat designed for tropospheric data acquisition using advanced sensors and communication modules for environmental analysis.</p>
 </div>
 
 </div>
@@ -230,6 +245,13 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+/* NAV CLICK SOUND */
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("clickSound").play();
+    });
+});
+
 /* ROBOT TRACKING */
 document.addEventListener("mousemove", e => {
 
@@ -240,11 +262,11 @@ document.addEventListener("mousemove", e => {
         const x = e.clientX - rect.left - rect.width/2;
         const y = e.clientY - rect.top - rect.height/2;
         const angle = Math.atan2(y, x);
-        eye.style.transform = `translate(${Math.cos(angle)*4}px, ${Math.sin(angle)*4}px)`;
+        eye.style.transform = `translate(${Math.cos(angle)*6}px, ${Math.sin(angle)*6}px)`;
     });
 
-    const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
-    const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+    const moveX = (e.clientX / window.innerWidth - 0.5) * 25;
+    const moveY = (e.clientY / window.innerHeight - 0.5) * 25;
     head.style.transform = `rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
 });
 
