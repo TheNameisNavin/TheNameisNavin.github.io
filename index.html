@@ -1,233 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navin's Space</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
-            background-color: #121212;
-            color: #ffffff;
-            overflow-y: auto;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navin // Digital Control Interface</title>
 
-        /* Particles.js container */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+<style>
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: "Courier New", monospace;
+    background: #050510;
+    color: #00ffe1;
+    overflow-x: hidden;
+}
 
-        nav {
-            background-color: #1f1f1f;
-            padding: 1rem;
-            text-align: center;
-        }
+/* ===== GRID BACKGROUND ===== */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0,255,225,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,225,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+}
 
-        nav a {
-            margin: 0 1rem;
-            color: #0F52BA;
-            text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
+/* ===== NAVBAR ===== */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(0,255,225,0.3);
+}
 
-        nav a:hover {
-            transform: scale(1.1);
-            background-color: #1E90FF;
-            color: #ffffff;
-        }
+.logo {
+    font-size: 22px;
+    text-shadow: 0 0 8px #00ffe1;
+}
 
-        .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-            position: relative;
-        }
+/* ===== GLITCH TEXT ===== */
+.glitch {
+    font-size: 48px;
+    position: relative;
+    color: #00ffe1;
+    text-shadow: 0 0 10px #00ffe1;
+}
 
-        h1 {
-            text-align: center;
-            font-size: 3.3rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
 
-        /* Floating effect on hover */
-        h1:hover {
-            transform: translateY(-15px);
-            color: #5BB3E0;
-            
-        }
+.glitch::before {
+    animation: glitchTop 1s infinite linear alternate-reverse;
+    color: #ff00ff;
+}
 
-        p {
-            font-size: 2rem;
-            color: #D6E8F7;
-            text-align: center;
-            position: relative;
-            
-        }
-    </style>
+.glitch::after {
+    animation: glitchBottom 1s infinite linear alternate-reverse;
+    color: #00ffff;
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(2px,-2px); }
+    100% { transform: translate(-2px,2px); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(-2px,2px); }
+    100% { transform: translate(2px,-2px); }
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* ===== TERMINAL ===== */
+.terminal {
+    margin: 40px auto;
+    width: 80%;
+    max-width: 700px;
+    padding: 20px;
+    border: 1px solid #00ffe1;
+    box-shadow: 0 0 15px #00ffe1;
+    text-align: left;
+}
+
+/* ===== CARDS ===== */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #00ffe1;
+    padding: 30px;
+    width: 260px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ffe1;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #00ffe1;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #00ffe1;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00ffe1;
+    color: black;
+}
+</style>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW5H1S2Z1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BWW5H1S2Z1');
-</script>
-    
 <body>
 
-    <!-- Particles.js container -->
-    <div id="particles-js"></div>
+<div class="nav">
+    <div class="logo">NAVIN.OS</div>
+    <div>STATUS: ONLINE</div>
+</div>
 
-    <nav>
-        <a href="about.html" class="hover-sound">About Me</a>
-        <a href="projects.html" class="hover-sound">Projects</a>
-        <a href="work.html" class="hover-sound">Work Experience</a>
-        <a href="blog.html" class="hover-sound">Technology Stacks</a>
-        <a href="testimonials.html" class="hover-sound">Testimonials</a>
-        <a href="contact.html" class="hover-sound">Contact</a>
-    </nav>
-   <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script>
-        // JavaScript code to play sound on hover
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                const sound = document.getElementById('hover-sound');
-                sound.play();
-            });
-        });
-    </script>
-    <div class="container">
-        <h1>Hey there! I'm Navin.</h1>
-        <p>Welcome to my profile!!</p>
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXR1YnRmeGRscHA0ZTlkandoYzMxOXNjMzVkdzEzbWNoM2ZxNGd5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QYkX9IMHthYn0Y3pcG/giphy.gif" alt="Exciting GIF" style="width: 100%; max-width: 400px; display: block; margin: 20px auto;">    
+<div class="hero">
+    <h1 class="glitch" data-text="SYSTEM INITIALIZED">
+        SYSTEM INITIALIZED
+    </h1>
 
-    <!-- Particles.js script -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        /* Load particles.js with custom configuration */
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 5,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
+    <div class="terminal">
+        <p id="typing"></p>
+    </div>
+
+    <a class="btn" href="#">ACCESS PORTFOLIO</a>
+</div>
+
+<div class="section">
+    <h2>MODULES</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Automation</h3>
+            <p>API workflows, integrations, SaaS systems</p>
+        </div>
+
+        <div class="card">
+            <h3>Technical Support</h3>
+            <p>Global client troubleshooting experience</p>
+        </div>
+
+        <div class="card">
+            <h3>Systems</h3>
+            <p>Networking, security, infrastructure</p>
+        </div>
+    </div>
+</div>
+
+<script>
+const text = "Initializing digital operations interface...\nAccess granted.\nWelcome, Navin Kumar S.";
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+
+typeWriter();
+</script>
+
 </body>
 </html>
-
-
-
