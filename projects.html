@@ -1,165 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navin's projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-         body {
-            margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
-            background-color: #121212;
-            color: #ffffff;
-            overflow-y: auto; /* Enable vertical scrolling */
-        }
-        nav {
-            background-color: #1f1f1f;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 1rem;
-            color: #0F52BA;
-            text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-        nav a:hover {
-            transform: scale(1.1);
-            background-color: #1E90FF;
-            color: #ffffff;
-        }
-        .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-            position: relative;
-        }
-        h2 {
-            text-align: center;
-            font-size: 3.3rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        h2:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
-        }
-        .project-item {
-            margin-bottom: 2rem;
-        }
-        h3 {
-            text-align: center;
-            font-size: 2.1rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        h3:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
-        }
-        p {
-            font-size: 1.6rem;
-            color: #D6E8F7;
-            text-align: left; 
-            line-height: 1.8;
-            margin-bottom: 1.5rem; 
-        }
-        p.big {
-            line-height: 1.8;
-        }
-    </style>
-</head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW5H1S2Z1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navin's Projects</title>
 
-  gtag('config', 'G-BWW5H1S2Z1');
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffe9d6;
+    background:
+        radial-gradient(circle at 70% 20%, #ff7b3a 0%, #7a2d10 40%, #2a0e05 100%);
+    min-height: 100vh;
+}
+
+/* NAV */
+nav {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: #ffb38a;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff6a00;
+}
+
+/* CONTAINER */
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2, h3 {
+    color: #ffd0a8;
+    text-shadow: 0 0 15px rgba(255,120,60,0.5);
+}
+
+/* PROJECT CARDS */
+.project-item {
+    background: rgba(0,0,0,0.35);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+    border: 1px solid rgba(255,120,60,0.3);
+}
+
+.project-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 25px rgba(255,120,60,0.4);
+}
+
+/* CLOCK */
+#clock {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 1.2rem;
+    color: #ffd9c2;
+    text-shadow: 0 0 10px #ff6a00;
+}
+
+/* ROBOT */
+#robot {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    width: 90px;
+    height: 90px;
+}
+
+.robot-head {
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    border-radius: 15px;
+    border: 2px solid #ff6a00;
+    position: relative;
+    transition: transform 0.1s;
+}
+
+.eye {
+    width: 14px;
+    height: 14px;
+    background: #ff6a00;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+}
+
+.eye.left { left: 20px; }
+.eye.right { right: 20px; }
+
+</style>
+</head>
+
 <body>
 
-    <nav>
-        <a href="index.html" class="hover-sound">Home</a>
-        <a href="about.html" class="hover-sound">About Me</a>
-        <a href="work.html" class="hover-sound">Work Experience</a>
-        <a href="blog.html" class="hover-sound">Technology Stacks</a>
-        <a href="testimonials.html" class="hover-sound">Testimonials</a>
-        <a href="contact.html" class="hover-sound">Contact</a>
-    </nav>
-    <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script>
-        // JavaScript code to play sound on hover
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                const sound = document.getElementById('hover-sound');
-                sound.play();
-            });
-        });
-    </script>
-    <div class="container">
-        <h2>Projects</h2>
-        <div class="project-item">
-            <h3>Virtual Interface Command and Target Obliterating Robot ( V.I.C.T.O.R ) 🤖</h3>
-        
-            <p>Click <a href="https://github.com/Navinakastark/VICTOR">here</a> to visit this project's github page</p>
-            <p>The proposed system deals with development of defence robotics technology.
-                Here, we employ the usage of embedded systems comprising microcontrollers along with a wide range 
-                of sensors in order to acquire high precision data output. It is a semi-autonomous robot with long-distance control, 
-                attack, espionage, and feedback capabilities.<br> This project represents a new approach in the domain 
-                of defence and obliteration.</p>
-        </div>
-        <div class="project-item">
-            <h3>Spending Insight Pro Model 💵📊🔍📈</h3>
-          
-            <p>Click <a href="https://github.com/Navinakastark/datas">here</a> to visit this project's github page</p>
+<div id="clock"></div>
 
-            <p>Monthly expenditure analysis using Data Science.<br>
-            This project uses numpy, pandas, seaborn, and matplotlib libraries 
-            to build a model that analyzes spending categories, amounts, balances, 
-            and purchase dates. The data, collected from bank statements, is visualized using PowerBI.<br>
-                
-            <p class="big"><b>Steps performed to implement the model:</b><br>
-                
-            1. Collected data on expenditures, such as amount spent, category, and date.<br>
-            2. Uploaded the data into a Python environment using the Pandas library.<br>
-            3. Performed exploratory data analysis to understand the data and its distribution.<br>
-            4. Visualized the data to identify patterns and relationships.<br>
-            5. Performed feature engineering to extract relevant information.<br>
-            6. Pre-processed the data by dropping irrelevant columns and encoding categorical variables.<br>
-            7. Split the data into training and testing sets.<br>
-            8. Built and trained a regression model using the Random Forest algorithm.<br>
-            9. Evaluated model performance using metrics such as Root Mean Squared Error.<br>
-            10. Used the model to predict expenditure amounts for new data points.</p>
-        </div>
-        <div class="project-item">
-            <h3>Home Security Using Python and OpenCV 🏠🔒🛡️📹</h3>
-            <p>This project uses a combination of libraries like keras, imutils, pickle, 
-            pandas along with OpenCV to create a home security system. Developed in Python, 
-            it features a 4K HDR camera for identifying threats under various lighting conditions. 
-            The system sends live streams to nearby police stations and emergency contacts. 
-            Future developments aim to integrate defensive measures to mitigate threats.</p>
-        </div>
-         <div class="project-item">
-            <h3>CUBE SAT</h3>
-            <p><b>Cube Satellite for Atmospheric Data Collection</b><br>
-The project involves designing, building, and deploying a Cube Satellite (CubeSat) engineered to gather vital data on atmospheric 
-conditions within the troposphere, the lowest layer of Earth's atmosphere. The CubeSat will leverage advanced sensors and communication 
-technologies to perform the following key functions:<br>
-</p>
-        </div>
-        
+<div id="robot">
+    <div class="robot-head" id="head">
+        <div class="eye left" id="eyeL"></div>
+        <div class="eye right" id="eyeR"></div>
     </div>
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="work.html">Work Experience</a>
+    <a href="blog.html">Technology Stacks</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <h2>Projects</h2>
+
+    <div class="project-item">
+        <h3>V.I.C.T.O.R 🤖</h3>
+        <p><a href="https://github.com/Navinakastark/VICTOR">View Project</a></p>
+        <p>Defence robotics platform using embedded systems and long-range control.</p>
+    </div>
+
+    <div class="project-item">
+        <h3>Spending Insight Pro 💵</h3>
+        <p><a href="https://github.com/Navinakastark/datas">View Project</a></p>
+        <p>Machine learning model analyzing monthly financial behaviour.</p>
+    </div>
+
+</div>
+
+<script>
+
+/* LIVE CLOCK */
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerText =
+        now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+/* ROBOT FOLLOW CURSOR */
+document.addEventListener("mousemove", e => {
+
+    const eyes = [eyeL, eyeR];
+
+    eyes.forEach(eye => {
+        const rect = eye.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width/2;
+        const y = e.clientY - rect.top - rect.height/2;
+        const angle = Math.atan2(y, x);
+        eye.style.transform = `translate(${Math.cos(angle)*4}px, ${Math.sin(angle)*4}px)`;
+    });
+
+    const head = document.getElementById("head");
+    const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+    const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+    head.style.transform = `rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
+});
+
+</script>
 
 </body>
 </html>
