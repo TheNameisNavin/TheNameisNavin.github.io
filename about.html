@@ -1,120 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Navin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif; /* Updated font-family */
-            background-color:  #121212;
-            color: #ffffff;
-            overflow-y: auto;
-        }
-        nav {
-            background-color: #1f1f1f;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 1rem;
-            color: #0F52BA;
-            text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-        nav a:hover {
-            transform: scale(1.1);
-            background-color: #1E90FF;
-            color: #ffffff;
-        }
-        .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-            position: relative;
-        }
-        h2 {
-            text-align: center;
-            font-size: 3.3rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        h2:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
-        }
-        p {
-            font-size: 1.6rem;
-            color: #D6E8F7;
-            text-align: left; /* Ensure text aligns from left to right */
-            line-height: 1.8;
-            margin-bottom: 1.5rem; /* Add spacing between paragraphs */
-        }
-        img {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 30px auto;
-            border-radius: 10px; /* Optional: rounded corners for the image */
-        }
-    </style>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW5H1S2Z1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Navin</title>
 
-  gtag('config', 'G-BWW5H1S2Z1');
-</script>
+<!-- Fonts to match Matrix home -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, #0a0a0f, #000000 70%);
+    color: #E0E0E0;
+    font-family: 'Share Tech Mono', monospace;
+    overflow-x: hidden;
+}
+
+/* SUBTLE SCANLINE EFFECT */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        transparent 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* NAVBAR — compatible with index */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,255,159,0.25);
+    z-index: 2;
+}
+
+nav a {
+    margin: 0 1.2rem;
+    color: #00FF9F;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #00E5FF;
+    text-shadow: 0 0 8px #00E5FF, 0 0 18px #FF2ED1;
+    transform: scale(1.1);
+}
+
+/* MAIN PANEL */
+.container {
+    max-width: 850px;
+    margin: 5rem auto;
+    padding: 3rem;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    box-shadow:
+        0 0 20px rgba(0,255,159,0.15),
+        0 0 40px rgba(255,46,209,0.08);
+    position: relative;
+    z-index: 2;
+}
+
+/* HEADING */
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: #00E5FF;
+    text-align: center;
+    text-shadow: 0 0 8px #00E5FF, 0 0 18px #FF2ED1;
+    margin-bottom: 2rem;
+}
+
+/* TEXT */
+p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #D6E8F7;
+    margin-bottom: 1.6rem;
+}
+
+/* IMAGE */
+img {
+    width: 100%;
+    max-width: 420px;
+    display: block;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow:
+        0 0 20px rgba(0,255,159,0.25),
+        0 0 40px rgba(255,46,209,0.15);
+    transition: 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* INTERACTIVE INFO CARDS */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.card {
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.55);
+    border-radius: 12px;
+    border: 1px solid rgba(0,255,159,0.15);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0,255,159,0.25);
+}
+
+.card-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #00FF9F;
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+}
+
+.card-value {
+    color: #E0E0E0;
+    font-size: 0.95rem;
+}
+</style>
+</head>
+
 <body>
 
-    <nav>
-        <a href="index.html" class="hover-sound">Home</a>
-        <a href="projects.html" class="hover-sound">Projects</a>
-        <a href="work.html" class="hover-sound">Work Experience</a>
-        <a href="blog.html" class="hover-sound">Technology Stacks</a>
-        <a href="testimonials.html" class="hover-sound">Testimonials</a>
-        <a href="contact.html" class="hover-sound">Contact</a>
-    </nav>
-    <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script>
-        // JavaScript code to play sound on hover
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                const sound = document.getElementById('hover-sound');
-                sound.play();
-            });
-        });
-    </script>
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I'm a tech problem solver, API whisperer, photographer, and lifelong learner based in Chennai. 
-            With 4+ years of experience in SaaS, automation, and troubleshooting, I turn challenges into solutions 
-            and complexity into clarity.
-        </p>
-        <p>
-            When I’m not coding or diving into networks, I’m exploring new tools, creating art, making Arduino robots, 
-            sharing insights, and fueling my curiosity with endless tea ☕.   
-            And by the way, no one has ever seen me and Batman in the same room. Just saying. 
-        </p>
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmFsMDlvZHlkZWtxZWdwZjJpNG5oZmJ0MWJ0NTAxdDg2Mm4xbGR0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nZUcWtrNqs9Nu/giphy.gif" 
-             alt="Bat GIF">    
+<nav>
+    <a href="index.html" class="hover-sound">Home</a>
+    <a href="projects.html" class="hover-sound">Projects</a>
+    <a href="work.html" class="hover-sound">Work Experience</a>
+    <a href="blog.html" class="hover-sound">Technology Stacks</a>
+    <a href="testimonials.html" class="hover-sound">Testimonials</a>
+    <a href="contact.html" class="hover-sound">Contact</a>
+</nav>
+
+<audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
+
+<div class="container">
+    <h2>About Me</h2>
+
+    <p>
+        I'm a technology problem solver and automation specialist based in Chennai. 
+        With nearly four years of experience supporting global clients across SaaS platforms, 
+        I focus on transforming complex technical issues into reliable, scalable solutions.
+    </p>
+
+    <p>
+        My work spans Freshservice administration, API integrations, workflow automation, 
+        and technical troubleshooting across enterprise environments. I enjoy building systems 
+        that reduce friction, improve efficiency, and deliver measurable impact.
+    </p>
+
+    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmFsMDlvZHlkZWtxZWdwZjJpNG5oZmJ0MWJ0NTAxdDg2Mm4xbGR0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nZUcWtrNqs9Nu/giphy.gif">
+
+    <div class="info-grid">
+        <div class="card">
+            <div class="card-title">Core Strength</div>
+            <div class="card-value">Automation & SaaS Support</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Tools</div>
+            <div class="card-value">Freshservice, ServiceNow, APIs</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Focus</div>
+            <div class="card-value">Efficiency & System Reliability</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Learning Path</div>
+            <div class="card-value">Python + System Design</div>
+        </div>
     </div>
+</div>
+
+<script>
+document.querySelectorAll('.hover-sound').forEach(link => {
+    link.addEventListener('mouseover', () => {
+        document.getElementById('hover-sound').play();
+    });
+});
+</script>
 
 </body>
 </html>
-
 
 
 
