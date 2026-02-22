@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Work Experience</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,7 +16,7 @@ body {
     background: radial-gradient(circle at 50% 20%, #081018 0%, #020509 70%);
 }
 
-/* NAV */
+/* NAV — larger text */
 nav {
     background: rgba(0,0,0,0.45);
     backdrop-filter: blur(6px);
@@ -29,7 +29,7 @@ nav a {
     margin: 0 1rem;
     color: #7fe7ff;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.55rem; /* increased */
     font-family: 'Orbitron', sans-serif;
     transition: 0.3s;
 }
@@ -39,7 +39,7 @@ nav a:hover {
     text-shadow: 0 0 10px #00f0ff;
 }
 
-/* CLOCK RIGHT MIDDLE */
+/* CLOCK */
 #clockBox {
     position: fixed;
     right: 20px;
@@ -59,7 +59,7 @@ nav a:hover {
     font-family: 'Orbitron', sans-serif;
 }
 
-/* RADAR LEFT MIDDLE */
+/* RADAR */
 #radarContainer {
     position: fixed;
     left: 20px;
@@ -73,7 +73,7 @@ nav a:hover {
     background: radial-gradient(circle, rgba(0,255,200,0.08), transparent 70%);
 }
 
-/* MAIN PANEL */
+/* MAIN */
 .container {
     padding: 2rem;
     max-width: 1000px;
@@ -115,14 +115,15 @@ h2 {
 
 .details h3 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 2rem;          /* bigger */
+    font-family: 'Inter', sans-serif;  /* readable */
+    font-weight: 600;
     color: #7fe7ff;
-    font-family: 'Orbitron', sans-serif;
 }
 
 .details span {
     display: block;
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: #c7f6ff;
     margin-top: 4px;
 }
@@ -234,7 +235,6 @@ function drawRadar() {
     ctx.beginPath();
     ctx.moveTo(cx,cy);
     ctx.lineTo(cx + 80*Math.cos(angle), cy + 80*Math.sin(angle));
-    ctx.strokeStyle = "#00f0ff";
     ctx.stroke();
 
     angle += 0.02;
