@@ -1,69 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navin's Space</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navin's Space</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Futura', 'Arial', sans-serif;
-            background-color: black;
-            color: #00ff9f;
-            overflow-x: hidden;
-        }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-        /* Matrix canvas background */
-        #matrix {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+<style>
+body {
+    margin: 0;
+    background-color: black;
+    color: #E0E0E0;
+    font-family: 'Share Tech Mono', monospace;
+    overflow-x: hidden;
+}
 
-        nav {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            text-align: center;
-        }
+/* Matrix canvas background */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 
-        nav a {
-            margin: 0 1rem;
-            color: #00ff9f;
-            text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-            display: inline-block;
-        }
+/* NAVBAR */
+nav {
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,255,159,0.25);
+}
 
-        nav a:hover {
-            transform: scale(1.1);
-            color: #ffffff;
-        }
+nav a {
+    margin: 0 1.2rem;
+    color: #00FF9F;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s ease;
+}
 
-        .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 8px #00FF9F, 0 0 18px #00FF9F;
+    transform: scale(1.1);
+}
 
-        h1 {
-            font-size: 3.3rem;
-            color: #00ff9f;
-            transition: transform 0.3s ease;
-        }
+/* CONTENT CONTAINER */
+.container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0,255,159,0.15);
+}
 
-        h1:hover {
-            transform: translateY(-10px);
-        }
+/* HEADINGS */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.3rem;
+    color: #00FF9F;
+    text-shadow: 0 0 8px #00FF9F, 0 0 20px #00FF9F;
+    transition: transform 0.3s ease;
+}
 
-        p {
-            font-size: 2rem;
-            color: #b6ffe0;
-        }
-    </style>
+h1:hover {
+    transform: translateY(-10px);
+}
+
+/* PARAGRAPH */
+p {
+    font-size: 1.8rem;
+    color: #E0E0E0;
+}
+
+/* LINK ACCENT COLOR */
+a {
+    color: #00E5FF;
+}
+</style>
 </head>
 
 <body>
@@ -82,10 +103,8 @@
 <audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
 
 <div class="container">
-    <h1>Hey there! I'm Navin.</h1>
-    <p>Welcome to my profile!!</p>
-
-    
+    <h1>Greetings! I'm Navin.</h1>
+    <p>Welcome to my digital space.</p>
 </div>
 
 <script>
@@ -109,7 +128,6 @@ const matrix = letters.split("");
 
 const fontSize = 16;
 const columns = canvas.width / fontSize;
-
 const drops = [];
 
 for (let x = 0; x < columns; x++) {
@@ -120,7 +138,7 @@ function drawMatrix() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#00ff9f";
+    ctx.fillStyle = "#00FF9F";
     ctx.font = fontSize + "px monospace";
 
     for (let i = 0; i < drops.length; i++) {
@@ -130,7 +148,6 @@ function drawMatrix() {
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
             drops[i] = 0;
         }
-
         drops[i]++;
     }
 }
@@ -145,5 +162,3 @@ window.addEventListener("resize", () => {
 
 </body>
 </html>
-
-
