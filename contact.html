@@ -14,49 +14,31 @@ body {
     font-family: 'Rajdhani', sans-serif;
     background: #000;
     color: #9dfcff;
-    overflow-x: hidden;
 }
 
-/* ===== TETRIS BACKGROUND ===== */
-.tetris-bg {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    z-index: -1;
-}
-.block {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: rgba(0,255,255,0.15);
-    animation: fall linear infinite;
-}
-@keyframes fall {
-    from { transform: translateY(-50px); }
-    to { transform: translateY(110vh); }
-}
-
-/* ===== NAV (MATRIX STYLE) ===== */
+/* ===== MATRIX NAV ===== */
 nav {
-    background: rgba(0,0,0,0.7);
-    padding: 1.2rem;
+    background: rgba(0,0,0,0.85);
+    padding: 1.3rem;
     text-align: center;
     border-bottom: 1px solid #00ffcc;
+    box-shadow: 0 0 15px rgba(0,255,204,0.3);
 }
 
 nav a {
-    margin: 0 1rem;
+    margin: 0 1.2rem;
     color: #00ffcc;
     text-decoration: none;
-    font-size: 2rem;
-    padding: 0.5rem 1.2rem;
-    border-radius: 8px;
+    font-size: 2.1rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 10px;
     transition: 0.3s ease;
 }
 
 nav a:hover {
     background: rgba(0,255,204,0.15);
-    box-shadow: 0 0 12px #00ffcc;
+    box-shadow: 0 0 14px #00ffcc;
+    transform: translateY(-2px);
 }
 
 /* ===== CLOCK ===== */
@@ -65,117 +47,69 @@ nav a:hover {
     top: 20px;
     right: 25px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.4rem;
+    font-size: 2.2rem;
     color: #00ffcc;
+    text-shadow: 0 0 12px #00ffcc;
 }
 
-/* ===== HOLOGRAM PANEL ===== */
+/* ===== PANEL ===== */
 .panel {
     max-width: 900px;
-    margin: 80px auto;
-    padding: 40px;
+    margin: 120px auto;
+    padding: 50px;
     border-radius: 20px;
-    background: rgba(0, 10, 20, 0.65);
+    background: rgba(0, 10, 20, 0.7);
     backdrop-filter: blur(15px);
-    box-shadow: 0 0 30px rgba(0,255,255,0.3);
+    box-shadow: 0 0 35px rgba(0,255,255,0.25);
 }
 
 h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3.6rem;
     text-align: center;
     color: #00ffcc;
+    margin-bottom: 40px;
 }
 
-/* ===== HOLOGRAPHIC TYPING ===== */
-.terminal {
-    font-family: monospace;
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-    border-left: 3px solid #00ffcc;
-    margin: 30px 0;
-    min-height: 140px;
-}
-
-/* ===== CONTACT CARDS ===== */
+/* ===== CONTACT GRID ===== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background: rgba(0,255,255,0.05);
-    padding: 25px;
-    border-radius: 15px;
+    padding: 30px;
+    border-radius: 18px;
     text-align: center;
     transition: 0.3s ease;
     border: 1px solid rgba(0,255,255,0.2);
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 20px rgba(0,255,255,0.6);
 }
 
 .card img {
-    width: 60px;
+    width: 65px;
+    margin-bottom: 15px;
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonials {
-    margin-top: 50px;
-    border-top: 1px solid rgba(0,255,255,0.3);
-    padding-top: 30px;
+/* ===== LINK TEXT ===== */
+.card a {
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.testimonial {
-    margin: 20px 0;
-    font-size: 1.4rem;
-    color: #bdfcff;
+.card a:hover {
+    color: #00ffcc;
 }
 
-/* ===== SUBMARINE RADAR ===== */
-.radar {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 2px solid rgba(0,255,255,0.3);
-}
-.radar::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: conic-gradient(transparent 85%, #00ffcc);
-    animation: rotate 3s linear infinite;
-}
-.radar::after {
-    content: "";
-    position: absolute;
-    inset: 20%;
-    border-radius: 50%;
-    border: 1px solid rgba(0,255,255,0.4);
-}
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* ===== ROBOT ===== */
-.robot {
-    position: fixed;
-    left: 30px;
-    bottom: 30px;
-    width: 180px;
-    pointer-events: none;
-    transition: transform 0.1s ease;
-}
-
-/* ===== RETRO STYLE ===== */
+/* ===== RETRO SCANLINES ===== */
 body::after {
     content: "";
     position: fixed;
@@ -191,8 +125,6 @@ body::after {
 </head>
 
 <body>
-
-<div class="tetris-bg" id="tetris"></div>
 
 <div class="clock" id="clock"></div>
 
@@ -210,105 +142,48 @@ body::after {
 <div class="panel">
     <h1>CONTACT NAVIN</h1>
 
-    <div class="terminal" id="terminal"></div>
-
     <div class="grid">
-        <a class="card hover-sound" href="mailto:navinkumarspm@outlook.com">
+
+        <div class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
-            <div>Email</div>
-        </a>
+            <div><a href="mailto:navinkumarspm@outlook.com">Email</a></div>
+        </div>
 
-        <a class="card hover-sound" href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">
+        <div class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png">
-            <div>LinkedIn</div>
-        </a>
+            <div><a href="https://www.linkedin.com/in/thenameisnavin/" target="_blank">LinkedIn</a></div>
+        </div>
 
-        <a class="card hover-sound" href="https://github.com/TheNameisNavin" target="_blank">
+        <div class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
-            <div>GitHub</div>
-        </a>
+            <div><a href="https://github.com/TheNameisNavin" target="_blank">GitHub</a></div>
+        </div>
 
-        <a class="card hover-sound" href="https://x.com/Monk910355" target="_blank">
+        <div class="card hover-sound">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
-            <div>Twitter / X</div>
-        </a>
-    </div>
+            <div><a href="https://x.com/Monk910355" target="_blank">Twitter / X</a></div>
+        </div>
 
-    <div class="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial">“Navin solves problems faster than most support teams respond.”</div>
-        <div class="testimonial">“Exceptional automation mindset and deep SaaS expertise.”</div>
-        <div class="testimonial">“Calm, precise, and extremely reliable under pressure.”</div>
     </div>
 </div>
 
-<img class="robot" id="robot"
-src="https://i.imgur.com/6RMhx.gif">
-
-<div class="radar"></div>
-
 <script>
-/* ===== HOVER SOUND ===== */
+/* HOVER SOUND */
 document.querySelectorAll('.hover-sound').forEach(link => {
     link.addEventListener('mouseover', () => {
         document.getElementById('hover-sound').play();
     });
 });
 
-/* ===== CLOCK ===== */
+/* CLOCK */
 function updateClock(){
     document.getElementById("clock").innerText =
     new Date().toLocaleTimeString();
 }
 setInterval(updateClock,1000);
 updateClock();
-
-/* ===== HOLOGRAPHIC TYPING ===== */
-const text = [
-"> establishing secure channel...",
-"> identity verified: Navin Kumar S",
-"> role: SaaS Specialist / Automation Engineer",
-"> node: Chennai",
-"> status: available for collaboration",
-"> awaiting input..."
-];
-
-let i=0,j=0;
-function type(){
-    if(i<text.length){
-        if(j<text[i].length){
-            document.getElementById("terminal").innerHTML += text[i][j];
-            j++;
-            setTimeout(type,20);
-        } else {
-            document.getElementById("terminal").innerHTML += "<br>";
-            i++; j=0;
-            setTimeout(type,300);
-        }
-    }
-}
-type();
-
-/* ===== ROBOT FOLLOW CURSOR ===== */
-document.addEventListener("mousemove", e=>{
-    const robot = document.getElementById("robot");
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    robot.style.transform = `rotate(${x}deg) translateY(${y}px)`;
-});
-
-/* ===== TETRIS BLOCKS ===== */
-const container = document.getElementById("tetris");
-for(let i=0;i<60;i++){
-    const b=document.createElement("div");
-    b.className="block";
-    b.style.left=Math.random()*100+"vw";
-    b.style.animationDuration=(5+Math.random()*10)+"s";
-    container.appendChild(b);
-}
 </script>
 
 </body>
 </html>
-
 
