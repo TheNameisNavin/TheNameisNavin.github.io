@@ -1,281 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technology Stacks and skills</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology Stacks and Skills</title>
 
-        nav {
-            background-color: #1f1f1f;
-            padding: 1rem;
-            text-align: center;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        nav a {
-            margin: 0 1rem;
-            color: #0F52BA;
-            text-decoration: none;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
+<style>
 
-        nav a:hover {
-            transform: scale(1.1);
-            background-color: #1E90FF;
-            color: #ffffff;
-        }
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #e6f7ff;
+    background: radial-gradient(circle at 50% 20%, #020617 0%, #000000 80%);
+    overflow-x: hidden;
+}
 
-        .container {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: auto;
-            position: relative;
-        }
+/* ===== STAR BACKGROUND ===== */
+.stars, .stars2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    z-index: -1;
+}
 
-        h2 {
-            text-align: center;
-            font-size: 3.3rem;
-            color: #3B99D8;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+.stars {
+    background-image: radial-gradient(2px 2px at 20px 30px, white, transparent),
+                      radial-gradient(1px 1px at 200px 150px, white, transparent),
+                      radial-gradient(2px 2px at 400px 80px, white, transparent);
+    animation: moveStars 120s linear infinite;
+}
 
-        h2:hover {
-            transform: translateY(-10px);
-            color: #5BB3E0;
-        }
+.stars2 {
+    background-image: radial-gradient(1px 1px at 50px 100px, #00f0ff, transparent),
+                      radial-gradient(2px 2px at 300px 200px, #7fe7ff, transparent);
+    animation: moveStars 200s linear infinite;
+}
 
-        .tech-stack-container {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            overflow: hidden;
-            max-width: 100%;
-            padding: 1rem 0;
-            flex-wrap: wrap;
-        }
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2000px); }
+}
 
-        .tech-stack {
-            padding: 1.5rem;
-            border-radius: 10px;
-            background-color: #1f1f1f;
-            border: 2px solid #4caf50;
-            color: #ffffff;
-            font-size: 1.2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1 0 15%;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            white-space: nowrap; /* Prevent text wrapping */
-            overflow: hidden; /* Prevent overflow */
-            text-overflow: ellipsis; /* Truncate text */
-            max-width: 150px; /* Set max width to avoid too large elements */
-        }
+/* ===== NAV ===== */
+nav {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    padding: 1rem;
+    text-align: center;
+}
 
-        .tech-stack:hover {
-            transform: scale(1.1);
-            background-color: #4caf50;
-        }
+nav a {
+    margin: 0 1rem;
+    color: #7fe7ff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+}
 
-        .carousel-buttons {
-            display: flex;
-            justify-content: space-between;
-            position: absolute;
-            top: 50%;
-            width: 100%;
-        }
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 12px #00f0ff;
+}
 
-        .carousel-button {
-            background-color: #4caf50;
-            color: #000;
-            border: none;
-            padding: 1rem;
-            border-radius: 50%; /* Circular shape */
-            font-size: 2rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 50px; /* Set fixed width and height for a circular button */
-            height: 50px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* ===== CLOCK ===== */
+#clockBox {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14px 22px;
+    border: 2px solid #00f0ff;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.65);
+    box-shadow: 0 0 25px rgba(0,240,255,0.5);
+}
 
-        .carousel-button:hover {
-            background-color: #ffffff;
-            color: #4caf50;
-        }
+#clock {
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+}
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
+/* ===== MAIN ===== */
+.container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
 
-        .modal-content {
-            background-color: #1f1f1f;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            max-width: 500px;
-            color: #ffffff;
-        }
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #7fe7ff;
+    margin-bottom: 2rem;
+}
 
-        .modal-content h3 {
-            color: #4caf50;
-        }
+/* ===== UFO CONTAINER ===== */
+.tech-stack-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
-        .modal-content p {
-            font-size: 1rem;
-            margin: 1rem 0;
-        }
+/* ===== UFO ===== */
+.ufo {
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    animation: float 4s ease-in-out infinite;
+}
 
-        .close-btn {
-            background-color: #4caf50;
-            color: #000;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
+.ufo:nth-child(even) { animation-delay: 1s; }
 
-        .close-btn:hover {
-            background-color: #ffffff;
-            color: #4caf50;
-        }
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
 
-    </style>
+.ufo-body {
+    width: 140px;
+    height: 40px;
+    background: linear-gradient(to right, #00f0ff, #7fe7ff);
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(0,240,255,0.7);
+}
+
+.ufo-dome {
+    width: 70px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    margin: auto;
+    border-radius: 50% 50% 0 0;
+    border: 1px solid #7fe7ff;
+}
+
+.skill-text {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #e6f7ff;
+}
+
+/* ===== CAROUSEL BUTTONS ===== */
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.carousel-button {
+    background: #00f0ff;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #020617;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #00f0ff;
+    text-align: center;
+}
+
+</style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWW5H1S2Z1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-BWW5H1S2Z1');
-</script>
 <body>
 
-<nav>
-    <a href="index.html" class="hover-sound">Home</a>
-    <a href="about.html" class="hover-sound">About Me</a>
-    <a href="work.html" class="hover-sound">Work Experience</a>
-    <a href="projects.html"class="hover-sound">Projects</a>
-    <a href="testimonials.html" class="hover-sound">Testimonials</a>
-    <a href="contact.html" class="hover-sound">Contact</a>
-</nav>
-<audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
-    <script>
-        // JavaScript code to play sound on hover
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                const sound = document.getElementById('hover-sound');
-                sound.play();
-            });
-        });
-    </script>
-<div class="container">
-    <h2>Tech Stacks and Skills</h2>
-    <div class="tech-stack-container" id="tech-stack-container">
-        <!-- Technology Stacks (initially showing 7) -->
-        <div class="tech-stack">Python</div>
-        <div class="tech-stack">JavaScript</div>
-        <div class="tech-stack">HTML5</div>
-        <div class="tech-stack">CSS3</div>
-        <div class="tech-stack">SQL</div>
-        <div class="tech-stack">Linux</div>
-        <div class="tech-stack">API</div>
-    </div>
+<div class="stars"></div>
+<div class="stars2"></div>
 
-    <div class="carousel-buttons">
-        <button class="carousel-button" onclick="moveCarousel(-1)">&#8249;</button>
-        <button class="carousel-button" onclick="moveCarousel(1)">&#8250;</button>
-    </div>
+<div id="clockBox"><div id="clock"></div></div>
+
+<nav>
+<a href="index.html" class="hover-sound">Home</a>
+<a href="about.html" class="hover-sound">About Me</a>
+<a href="work.html" class="hover-sound">Work Experience</a>
+<a href="projects.html" class="hover-sound">Projects</a>
+<a href="testimonials.html" class="hover-sound">Testimonials</a>
+<a href="contact.html" class="hover-sound">Contact</a>
+</nav>
+
+<audio id="hover-sound" src="https://css-tricks.com/examples/SoundOnHover/audio/beep.mp3"></audio>
+
+<div class="container">
+<h2>Tech Stacks and Skills</h2>
+
+<div class="tech-stack-container" id="tech-stack-container"></div>
+
+<div class="carousel-buttons">
+<button class="carousel-button" onclick="moveCarousel(-1)">‹</button>
+<button class="carousel-button" onclick="moveCarousel(1)">›</button>
 </div>
 
-<!-- Modal -->
+</div>
+
 <div class="modal" id="tech-modal">
-    <div class="modal-content">
-        <h3 id="modal-title">Title</h3>
-        <button class="close-btn" onclick="closeModal()">Close</button>
-    </div>
+<div class="modal-content">
+<h3 id="modal-title"></h3>
+<button onclick="closeModal()">Close</button>
+</div>
 </div>
 
 <script>
-    const techStacks = [
-        'Python', 'JavaScript', 'HTML5', 'CSS3', 'SQL', 'Linux', 'API',
-        'VMware', 'Postman', 'Salesforce', 'ServiceNow', 'JSON/XML', 'Chat Support', 
-        'Email Support', 'Call Support', 'Ticket handling'
-    ];
 
-    let currentIndex = 0;
+/* CLOCK */
+function updateClock() {
+    document.getElementById("clock").innerText =
+        new Date().toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
 
-    function moveCarousel(direction) {
-        currentIndex += direction * 7;
+/* NAV SOUND */
+document.querySelectorAll('.hover-sound').forEach(link => {
+    link.addEventListener('mouseover', () => {
+        document.getElementById('hover-sound').play();
+    });
+});
 
-        if (currentIndex < 0) {
-            currentIndex = 0;
-        }
+/* SKILLS */
+const techStacks = [
+'Python','JavaScript','HTML5','CSS3','SQL','Linux','API',
+'ServiceNow','Freshservice','Postman','JSON/XML','SaaS Support',
+'Automation','REST API','Networking','Cyber Security'
+];
 
-        if (currentIndex >= techStacks.length) {
-            currentIndex = techStacks.length - 7;
-        }
+let currentIndex = 0;
 
-        displayTechStacks();
+function moveCarousel(direction) {
+    currentIndex += direction * 6;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex >= techStacks.length) currentIndex = techStacks.length - 6;
+    displayTechStacks();
+}
+
+function displayTechStacks() {
+    const container = document.getElementById('tech-stack-container');
+    container.innerHTML = '';
+
+    for (let i = currentIndex; i < currentIndex + 6 && i < techStacks.length; i++) {
+
+        const ufo = document.createElement('div');
+        ufo.className = 'ufo';
+        ufo.onclick = () => zoomCard(techStacks[i]);
+
+        ufo.innerHTML = `
+            <div class="ufo-dome"></div>
+            <div class="ufo-body"></div>
+            <div class="skill-text">${techStacks[i]}</div>
+        `;
+
+        container.appendChild(ufo);
     }
+}
 
-    function displayTechStacks() {
-        const container = document.getElementById('tech-stack-container');
-        container.innerHTML = '';
+function zoomCard(title) {
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('tech-modal').style.display = 'flex';
+}
 
-        for (let i = currentIndex; i < currentIndex + 7 && i < techStacks.length; i++) {
-            const techStackDiv = document.createElement('div');
-            techStackDiv.className = 'tech-stack';
-            techStackDiv.textContent = techStacks[i];
-            techStackDiv.onclick = function() { zoomCard(techStacks[i]); };
-            container.appendChild(techStackDiv);
-        }
-    }
+function closeModal() {
+    document.getElementById('tech-modal').style.display = 'none';
+}
 
-    function zoomCard(title) {
-        document.getElementById('modal-title').textContent = title;
-        document.getElementById('tech-modal').style.display = 'flex';
-    }
+displayTechStacks();
 
-    function closeModal() {
-        document.getElementById('tech-modal').style.display = 'none';
-    }
-
-    displayTechStacks(); // Initial display
 </script>
 
 </body>
 </html>
-
 
 
 
