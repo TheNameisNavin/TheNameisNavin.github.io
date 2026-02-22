@@ -29,7 +29,7 @@ nav a {
     margin: 0 1rem;
     color: #7fe7ff;
     text-decoration: none;
-    font-size: 1.55rem; /* increased */
+    font-size: 1.75rem;
     font-family: 'Orbitron', sans-serif;
     transition: 0.3s;
 }
@@ -113,19 +113,21 @@ h2 {
     object-fit: cover;
 }
 
+/* TITLE */
 .details h3 {
-    margin: 0;
-    font-size: 2rem;          /* bigger */
-    font-family: 'Inter', sans-serif;  /* readable */
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     color: #7fe7ff;
 }
 
+/* META INFO */
 .details span {
     display: block;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: #c7f6ff;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .details p {
@@ -208,7 +210,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
     });
 });
 
-/* RADAR */
+/* SUBMARINE RADAR */
 const canvas = document.getElementById("radar");
 const ctx = canvas.getContext("2d");
 
@@ -224,18 +226,52 @@ function drawRadar() {
     const cy = canvas.height/2;
 
     ctx.strokeStyle = "#00f0ff";
+    ctx.lineWidth = 1;
+
+    [80, 65, 50, 35, 20].forEach(r => {
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI*2);
+        ctx.stroke();
+    });
+
     ctx.beginPath();
-    ctx.arc(cx,cy,80,0,Math.PI*2);
+    ctx.moveTo(cx, cy-80);
+    ctx.lineTo(cx, cy+80);
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(cx,cy,55,0,Math.PI*2);
+    ctx.moveTo(cx-80, cy);
+    ctx.lineTo(cx+80, cy);
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.moveTo(cx,cy);
+    ctx.moveTo(cx-56, cy-56);
+    ctx.lineTo(cx+56, cy+56);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx+56, cy-56);
+    ctx.lineTo(cx-56, cy+56);
+    ctx.stroke();
+
+    const gradient = ctx.createRadialGradient(cx, cy, 10, cx, cy, 90);
+    gradient.addColorStop(0, "rgba(0,255,200,0.4)");
+    gradient.addColorStop(1, "rgba(0,255,200,0)");
+
+    ctx.strokeStyle = "#00ffe1";
+    ctx.lineWidth = 2;
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
     ctx.lineTo(cx + 80*Math.cos(angle), cy + 80*Math.sin(angle));
     ctx.stroke();
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, 80, angle-0.15, angle+0.15);
+    ctx.closePath();
+    ctx.fill();
 
     angle += 0.02;
     requestAnimationFrame(drawRadar);
