@@ -30,6 +30,6 @@ I’m always looking to collaborate, learn, and discuss exciting tech topics. Fe
  🔗 LinkedIn: https://www.linkedin.com/in/thenameisnavin/
  🐙 GitHub: github.com/thenameisnavin/
  
-Check out my site: thenameisnavin.github.io/
+Check out my site: [thenameisnavin.github.io/](https://thenameisnavin.github.io/)
 
 Thanks for stopping by, and I hope you find something valuable here! 🚀
